@@ -1,0 +1,198 @@
+/* ===================================================
+   PROPERTYHUB - FULL PAGE BACKGROUND & FIX NO OVERLAP
+   =================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* Poore page ko absolute main background handle karne ke liye set kiya */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif !important;
+  position: relative;
+  min-height: 100vh;
+  background-color: #f4f8fc !important;
+}
+
+/* POORE PAGE PAR REAL-ESTATE IMAGE + BLUR + SKY BLUE TINT */
+body::before {
+  content: "";
+  position: fixed; /* Fixed se yeh pure screen par stretch rahega */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  /* Aapki image ka path */
+  background-image: url('../images/login.jpg'); 
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  
+  /* Soft Blur Effect */
+  filter: blur(2px); 
+  transform: scale(1.02); 
+  z-index: -2; /* Sabse peeche */
+}
+
+/* Poore page par sky-blue overlay layer taake white patches na aayin */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(212, 230, 252, 0.85) 0%, rgba(230, 242, 255, 0.9) 100%);
+  z-index: -1; /* Image ke upar aur text ke neeche */
+}
+
+
+/* LOGIN CONTENT SECTION (Navbar se perfect clean padding gap) */
+.login-wrapper-section {
+  min-height: 100vh; 
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* NAVBAR SE NEECHE DHAKELNE KE LIYE MARGIN KI JAGAH PADDING USE KI */
+  margin-top: 0 !important; 
+  padding-top: 160px !important; /* Isse background upar navbar ke peeche tak chala gaya */
+  padding-bottom: 6rem !important;
+}
+
+/* ===================================================
+   ENLARGED FLOATING CARD SYSTEM
+   =================================================== */
+.login-card {
+  background: #ffffff;
+  border-radius: 28px;
+  box-shadow: 0 30px 60px rgba(13, 110, 253, 0.08);
+  border: 1px solid rgba(255, 255, 255, 1);
+  position: relative;
+  
+  /* Height extension padding */
+  padding-top: 6rem !important;    
+  padding-bottom: 6rem !important;
+  padding-left: 4.5rem !important;
+  padding-right: 4.5rem !important;
+  
+  transition: transform 0.3s ease;
+}
+
+/* Scaled Up Custom Inputs */
+.custom-input {
+  height: 56px;
+  border-radius: 14px !important;
+  border: 1.5px solid #e1e8f0 !important;
+  padding-left: 18px;
+  font-size: 0.95rem;
+}
+
+.custom-input:focus {
+  border-color: #0d6efd !important;
+  box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.15) !important;
+}
+
+.text-dark-blue { color: #051429 !important; }
+.password-toggle-btn { outline: none !important; z-index: 5; font-size: 1.1rem; }
+.cursor-pointer { cursor: pointer; }
+.hover-underline:hover { text-decoration: underline !important; }
+
+/* Login Button styling */
+.login-submit-btn {
+  background: #0d6efd !important;
+  border: none;
+  height: 56px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.login-submit-btn:hover {
+  background: #0b5ed7 !important;
+  box-shadow: 0 10px 25px rgba(13, 110, 253, 0.35);
+}
+
+/* ===================================================
+   ENLARGED BOTTOM FEATURES BADGES BAR (EXACT REF COPY)
+   =================================================== */
+.features-badges-bar {
+  background: #ffffff !important;
+  border: 1px solid rgba(225, 232, 240, 0.8) !important;
+  border-radius: 16px !important;
+  width: 100% !important;
+  
+  /* Flexbox space-even ya space-around se lines ke aas pass spacing barhayein */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-around !important; /* Lines ke dono taraf perfect massive gap dega */
+  
+  /* Vertical container height extension */
+  padding-top: 3.5rem !important;
+  padding-bottom: 3.5rem !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+  
+  box-shadow: 0 15px 40px rgba(5, 20, 41, 0.03) !important;
+}
+
+/* Badge container item with extra flex row padding gaps */
+.badge-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 24px !important; /* Icon aur text ke beech ki spacing */
+  flex: 1;
+  justify-content: center;
+}
+
+/* Reference Image jesa Bada Direct Icon (No Background Circle) */
+.badge-icon-box {
+  background: transparent !important; /* Circle background khatam */
+  width: auto !important;
+  height: auto !important;
+  min-width: auto !important;
+  min-height: auto !important;
+}
+
+/* Icon size is massively increased here to match reference image */
+.badge-icon-box i {
+  font-size: 2.8rem !important; /* 45px+ Huge premium look icons */
+  color: #0d6efd !important;
+  display: inline-block;
+  line-height: 1;
+}
+
+/* Divider lines ke darmiyan spacing barhane aur height setup */
+.badge-divider {
+  width: 1px !important;
+  height: 55px !important; /* High vertical line divider */
+  background-color: #f0f4f9 !important; /* Soft premium line color */
+  flex-shrink: 0;
+}
+
+/* Typography Enhancements */
+.badge-item h6 {
+  font-size: 1.2rem !important; /* Text heading made larger */
+  font-weight: 700 !important;
+  color: #0e2040 !important;
+  margin-bottom: 4px !important;
+}
+
+.badge-item p {
+  font-size: 0.95rem !important; /* Subtitle text made larger */
+  color: #64748b !important;
+  line-height: 1.4;
+}
+
+/* Mobile responsive handling to avoid text squishing */
+@media (max-width: 768px) {
+  .features-badges-bar {
+    flex-direction: column !important;
+    gap: 2.5rem !important;
+    padding: 2.5rem 1.5rem !important;
+  }
+  .badge-divider {
+    display: none !important;
+  }
+}
