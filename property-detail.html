@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Property Details - PropertyHub</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg custom-navbar sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand logo" href="index.html">
+        <i class="fa-solid fa-house-circle-check text-primary me-2"></i>PropertyHub
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link fw-semibold" href="index.html">Buy</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="rent.html">Rent</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold active" href="property-detail.html">Property Details</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="favourite.html">Favorites ❤️</a></li>
+        </ul>
+        <button class="btn btn-primary rounded-pill px-4 shadow-sm fw-semibold">Login</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Top Switcher Bar -->
+  <div class="container my-3 text-center">
+    <div class="tab-switcher-container shadow-sm">
+      <a href="index.html" class="btn page-tab-btn text-secondary">1. Buy Page</a>
+      <a href="rent.html" class="btn page-tab-btn text-secondary">2. Rent Page</a>
+      <a href="property-detail.html" class="btn page-tab-btn active">3. Property Details</a>
+      <a href="favourite.html" class="btn page-tab-btn text-secondary">4. Favorites ❤️</a>
+    </div>
+  </div>
+
+  <!-- Details Content -->
+  <div class="container my-5">
+    <div class="row g-4">
+      <div class="col-lg-8">
+        <div class="position-relative mb-3">
+          <img id="mainImage" src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1000" class="w-100 main-img shadow-sm" alt="Main View">
+        </div>
+
+        <div class="row g-2 mb-4">
+          <div class="col-3"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400" class="w-100 thumb-img active" onclick="changeImage(this.src, this)"></div>
+          <div class="col-3"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400" class="w-100 thumb-img" onclick="changeImage(this.src, this)"></div>
+          <div class="col-3"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400" class="w-100 thumb-img" onclick="changeImage(this.src, this)"></div>
+          <div class="col-3"><img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=400" class="w-100 thumb-img" onclick="changeImage(this.src, this)"></div>
+        </div>
+
+        <div class="card p-4 border-0 shadow-sm rounded-4 bg-white mb-4">
+          <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+            <h2 class="fw-bold mb-0 text-dark">Luxury Modern Villa</h2>
+            <h3 class="text-primary fw-bold mb-0">PKR 2.5 Crore</h3>
+          </div>
+          <p class="text-muted mt-2"><i class="fa-solid fa-location-dot text-danger me-1"></i> DHA Phase 6, Lahore, Pakistan</p>
+          <hr class="my-3 opacity-10">
+          
+          <div class="row text-center g-3 my-2">
+            <div class="col-3"><div class="p-3 bg-light rounded-4"><i class="fa-solid fa-bed text-primary fs-4"></i><div class="fw-bold mt-1 text-secondary">4 Beds</div></div></div>
+            <div class="col-3"><div class="p-3 bg-light rounded-4"><i class="fa-solid fa-bath text-primary fs-4"></i><div class="fw-bold mt-1 text-secondary">5 Baths</div></div></div>
+            <div class="col-3"><div class="p-3 bg-light rounded-4"><i class="fa-solid fa-ruler-combined text-primary fs-4"></i><div class="fw-bold mt-1 text-secondary">10 Marla</div></div></div>
+            <div class="col-3"><div class="p-3 bg-light rounded-4"><i class="fa-solid fa-car text-primary fs-4"></i><div class="fw-bold mt-1 text-secondary">2 Garages</div></div></div>
+          </div>
+
+          <h5 class="fw-bold mt-4 text-dark mb-3">Key Features & Amenities</h5>
+          <div class="row g-3">
+            <div class="col-md-4 col-6"><div class="amenity-box"><i class="fa-solid fa-swimming-pool text-primary mb-2 fs-5"></i><br>Swimming Pool</div></div>
+            <div class="col-md-4 col-6"><div class="amenity-box"><i class="fa-solid fa-shield-halved text-primary mb-2 fs-5"></i><br>24/7 Security</div></div>
+            <div class="col-md-4 col-6"><div class="amenity-box"><i class="fa-solid fa-bolt text-primary mb-2 fs-5"></i><br>Solar Backup</div></div>
+            <div class="col-md-4 col-6"><div class="amenity-box"><i class="fa-solid fa-snowflake text-primary mb-2 fs-5"></i><br>Central AC</div></div>
+            <div class="col-md-4 col-6"><div class="amenity-box"><i class="fa-solid fa-tree text-primary mb-2 fs-5"></i><br>Lawn & Garden</div></div>
+            <div class="col-md-4 col-6"><div class="amenity-box"><i class="fa-solid fa-wifi text-primary mb-2 fs-5"></i><br>Fiber Internet</div></div>
+          </div>
+        </div>
+
+        <div class="card p-4 border-0 shadow-sm rounded-4 bg-white">
+          <h5 class="fw-bold text-dark mb-3"><i class="fa-solid fa-map-location-dot me-2 text-primary"></i>Location & Nearby</h5>
+          <div class="map-container rounded-4 overflow-hidden border shadow-sm">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13615.15822365287!2d74.43621870535359!3d31.447432098616147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391908a38a7c2e3d%3A0xb3a33957cc9be63!2sDHA%20Phase%206%2C%20Lahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s" 
+              width="100%" 
+              height="320" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="card p-4 border-0 shadow-sm rounded-4 bg-white sticky-lg-top" style="top: 100px;">
+          <h4 class="fw-bold mb-3 text-dark">Contact Agent</h4>
+          <div class="d-flex align-items-center mb-3 p-3 bg-light rounded-4">
+            <img src="https://i.pravatar.cc/100?img=33" class="rounded-circle me-3 border border-2 border-primary" width="60" height="60" alt="Agent">
+            <div>
+              <h6 class="fw-bold mb-0 text-dark">Ahmed Khan</h6>
+              <small class="text-muted">Senior Real Estate Agent</small>
+            </div>
+          </div>
+          <div class="d-grid gap-2 mb-3">
+            <a href="tel:+923001234567" class="btn btn-outline-primary rounded-pill py-2 fw-semibold"><i class="fa-solid fa-phone me-2"></i> Call Agent</a>
+            <a href="https://wa.me/923001234567" class="btn btn-success rounded-pill py-2 fw-semibold"><i class="fa-brands fa-whatsapp me-2"></i> WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="pt-5 pb-4 bg-dark text-light mt-auto">
+    <div class="container">
+      <div class="row g-4 mb-4">
+        
+        <div class="col-lg-4 col-md-6">
+          <a class="logo text-white d-block mb-3 text-decoration-none fw-bold fs-4" href="index.html">
+            <i class="fa-solid fa-house-circle-check text-primary me-2"></i>PropertyHub
+          </a>
+          <p class="small text-secondary mb-3">
+            PropertyHub is Pakistan's leading real estate portal connecting buyers, sellers, and renters with premium verified properties nationwide.
+          </p>
+          <div class="d-flex gap-2">
+            <a href="#" class="btn btn-outline-secondary rounded-circle btn-sm d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="btn btn-outline-secondary rounded-circle btn-sm d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="btn btn-outline-secondary rounded-circle btn-sm d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="btn btn-outline-secondary rounded-circle btn-sm d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6">
+          <h6 class="text-white fw-bold mb-3">Quick Links</h6>
+          <ul class="list-unstyled small d-flex flex-column gap-2 mb-0">
+            <li><a href="index.html" class="text-secondary text-decoration-none">Buy Properties</a></li>
+            <li><a href="rent.html" class="text-secondary text-decoration-none">Rent Properties</a></li>
+            <li><a href="favourite.html" class="text-secondary text-decoration-none">Saved Wishlist</a></li>
+            <li><a href="#" class="text-secondary text-decoration-none">Commercial Space</a></li>
+            <li><a href="#" class="text-secondary text-decoration-none">Featured Projects</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h6 class="text-white fw-bold mb-3">Popular Locations</h6>
+          <ul class="list-unstyled small d-flex flex-column gap-2 mb-0">
+            <li><a href="#" class="text-secondary text-decoration-none">DHA Lahore</a></li>
+            <li><a href="#" class="text-secondary text-decoration-none">Bahria Town Karachi</a></li>
+            <li><a href="#" class="text-secondary text-decoration-none">Gulberg Islamabad</a></li>
+            <li><a href="#" class="text-secondary text-decoration-none">Clifton Karachi</a></li>
+            <li><a href="#" class="text-secondary text-decoration-none">F-7 Islamabad</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h6 class="text-white fw-bold mb-3">Subscribe to Newsletter</h6>
+          <p class="small text-secondary mb-3">Get the latest market insights and hot property deals straight to your inbox.</p>
+          <form onsubmit="event.preventDefault();">
+            <div class="input-group mb-3">
+              <input type="email" class="form-control rounded-start-pill border-0 px-3 fs-6" placeholder="Your Email Address" required>
+              <button class="btn btn-primary rounded-end-pill px-3 fw-semibold" type="submit">Subscribe</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+      <hr class="border-secondary opacity-25 my-4">
+
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center small text-secondary gap-2">
+        <p class="mb-0">&copy; 2026 PropertyHub. All Rights Reserved.</p>
+        <div class="d-flex gap-3">
+          <a href="#" class="text-secondary text-decoration-none">Privacy Policy</a>
+          <span>•</span>
+          <a href="#" class="text-secondary text-decoration-none">Terms of Service</a>
+          <span>•</span>
+          <a href="#" class="text-secondary text-decoration-none">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
