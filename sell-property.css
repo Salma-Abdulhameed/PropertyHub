@@ -1,0 +1,478 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+}
+
+body {
+    background: #f5f9ff;
+}
+
+/* Navbar Start */
+
+.custom-navbar {
+    background: #fff;
+    margin: 18px auto;
+    width: 95%;
+    border-radius: 50px;
+    padding: 12px 18px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, .08);
+    transition: .4s ease;
+}
+
+.custom-navbar.scrolled {
+    padding: 10px 18px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, .12);
+}
+
+/* Logo */
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1E3A8A !important;
+}
+
+.logo i {
+    color: #3B82F6;
+    margin-right: 8px;
+}
+
+/* Menu */
+
+.navbar-nav {
+    gap: 10px;
+}
+
+.nav-link {
+    position: relative;
+    color: #1f2937 !important;
+    font-size: 16px;
+    font-weight: 500;
+    transition: .3s;
+    padding: 10px 18px !important;
+}
+
+/* Active Line */
+
+.nav-link.active::after {
+    content: "";
+    position: absolute;
+    left: 18px;
+    bottom: 5px;
+    width: 60%;
+    height: 2px;
+    background: #2563eb;
+}
+
+/* Hover */
+
+.nav-link:hover {
+    color: #2563eb !important;
+}
+
+.nav-link.active {
+    color: #2563eb !important;
+}
+
+/* Remove Focus Box */
+
+.nav-link:focus,
+.nav-link:focus-visible,
+.dropdown-toggle:focus,
+.dropdown-toggle:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Dropdown */
+
+.custom-dropdown {
+    border: none;
+    border-radius: 18px;
+    padding: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .08);
+    min-width: 240px;
+}
+
+.dropdown-item {
+    border-radius: 12px;
+    padding: 12px 16px;
+    transition: .3s;
+}
+
+.dropdown-item i {
+    color: #2563eb;
+    margin-right: 10px;
+}
+
+.dropdown-item:hover {
+    background: #eff6ff;
+    color: #2563eb;
+    transform: translateX(6px);
+}
+
+/* Search Button */
+
+.icon-btn {
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: #eff6ff;
+    color: #2563eb;
+    transition: .3s;
+}
+
+.icon-btn:hover {
+    background: #2563eb;
+    color: #fff;
+    transform: rotate(10deg);
+}
+
+/* Login Button */
+
+.login-btn {
+    border: 2px solid #2563eb;
+    color: #2563eb;
+    border-radius: 30px;
+    padding: 10px 24px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.login-btn:hover {
+    background: #2563eb;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* Sell Property Button */
+
+.sell-btn {
+    background: #2563eb;
+    color: #fff !important;
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: .3s;
+    white-space: nowrap;
+}
+
+.sell-btn:hover {
+    background: #1E40AF;
+    color: #fff !important;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, .35);
+}
+
+/* Mobile Button */
+
+.navbar-toggler {
+    font-size: 26px;
+    color: #2563eb;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none !important;
+    outline: none !important;
+}
+/* Navbar End */
+/* Hero Start */
+
+.sell-hero {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    background:
+        linear-gradient(rgba(30, 58, 138, .68),
+        rgba(30, 58, 138, .68)),
+        url("./images/luxuary-villa.png") center/cover no-repeat;
+
+    color: #fff;
+    padding: 100px 20px 70px;
+}
+
+.hero-content {
+    max-width: 750px;
+    margin: auto;
+}
+
+.hero-content span,
+.hero-heading span {
+    color: #D4AF37;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.hero-content h1 {
+    font-size: 52px;
+    font-weight: 700;
+    margin: 12px 0;
+}
+
+.hero-content p {
+    font-size: 17px;
+    margin: 0;
+}
+
+
+/* Hero Heading */
+
+.hero-heading {
+    margin-top: 55px;
+}
+
+.hero-heading h2 {
+    font-size: 36px;
+    font-weight: 600;
+    margin: 8px 0;
+}
+
+.hero-heading p {
+    font-size: 15px;
+    margin: 0;
+    opacity: .9;
+}
+
+
+/* Form Section */
+
+.property-section {
+    background: #F3F4F6;
+    padding: 0 0 70px;
+}
+
+.property-section form {
+    position: relative;
+    margin-top: -45px;
+    z-index: 2;
+}
+
+
+/* Form Card */
+
+.form-card {
+    height: 100%;
+    background: #fff;
+    padding: 28px;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, .07);
+    transition: .3s ease;
+}
+
+.form-card:hover {
+    transform: translateY(-4px);
+}
+
+.form-card h3 {
+    color: #1E3A8A;
+    font-size: 20px;
+    margin-bottom: 22px;
+}
+
+.form-card h3 i {
+    color: #D4AF37;
+    margin-right: 8px;
+}
+
+
+/* Inputs */
+
+.form-card label {
+    display: block;
+    color: #374151;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 7px;
+}
+
+.form-card input,
+.form-card select,
+.form-card textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d9dde5;
+    border-radius: 9px;
+    outline: none;
+    color: #374151;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.form-card input:focus,
+.form-card select:focus,
+.form-card textarea:focus {
+    border-color: #1E3A8A;
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, .08);
+}
+
+.form-card textarea {
+    resize: vertical;
+}
+
+
+/* Image Upload */
+
+.upload-box {
+    min-height: 205px;
+    border: 2px dashed #cbd5e1;
+    border-radius: 15px;
+
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.upload-box:hover {
+    border-color: #1E3A8A;
+    background: #f8faff;
+}
+
+.upload-box i {
+    color: #1E3A8A;
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.upload-box span {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.upload-box small {
+    color: #777;
+    margin-top: 5px;
+}
+
+.upload-box input {
+    display: none;
+}
+
+#imagePreview {
+    display: none;
+    width: 100%;
+    height: 205px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-top: 15px;
+}
+
+
+/* Amenities */
+
+.amenities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.amenities label {
+    background: #F3F4F6;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.amenities label:hover {
+    background: #e8eefc;
+}
+
+.amenities input {
+    width: auto;
+    margin-right: 6px;
+}
+
+
+/* Submit Button */
+
+.submit-btn {
+    border: none;
+    background: #D4AF37;
+    color: #fff;
+    padding: 13px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: .3s ease;
+}
+
+.submit-btn:hover {
+    background: #1E3A8A;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(30, 58, 138, .2);
+}
+
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+    .sell-hero {
+        min-height: 430px;
+        padding: 100px 20px 65px;
+    }
+
+    .hero-content h1 {
+        font-size: 38px;
+    }
+
+    .hero-heading {
+        margin-top: 38px;
+    }
+
+    .hero-heading h2 {
+        font-size: 28px;
+    }
+
+    .property-section form {
+        margin-top: -30px;
+    }
+
+    .form-card {
+        padding: 22px;
+    }
+}
+
+/* ==========================================
+   PREMIUM RESPONIVE FOOTER STYLES
+   ========================================== */
+.bg-dark-blue {
+  background-color: #051429 !important; /* Elegant ultra dark real estate theme color */
+}
+
+/* Base typography setup using Poppins */
+.main-footer {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.footer-heading {
+  font-size: 0.95rem !important;
+  letter-spacing: 0.5px;
+}
+
+/* Footer Link Configurations with transition delays */
+.footer-links li a {
+  color: rgba(255, 255, 255, 0.6) !important;
+  text-decoration: none !important;
+  font-size: 0.85rem !important;
+  font-weight: 400;
+  display: inline-block;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.footer-links li a:hover {
+  color: #0d6efd !important; /* Changes to pure brand blue on hover */
+  transform: translateX(4px); /* Moves nicely to the right */
+}
