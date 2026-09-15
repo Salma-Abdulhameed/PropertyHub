@@ -152,353 +152,434 @@ color:#2563eb;
 }
 
 /* Navbr End */
+/* ==========================================
+   USER DASHBOARD
+   ========================================== */
 
-
-/* User Dashboard */
-
-.dashboard {
+.user-dashboard {
+    background: #08152b;
     min-height: 100vh;
-    background: #F3F4F6;
     padding: 120px 0 70px;
 }
 
 
-/* Dashboard Header */
+/* ==========================================
+   DASHBOARD HEADER
+   ========================================== */
 
 .dashboard-header {
-    background: #fff;
-    padding: 30px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 25px;
-    box-shadow: 0 10px 30px rgba(30,58,138,.08);
-    border: 1px solid #e5e7eb;
+    margin-bottom: 35px;
 }
 
-.dashboard-header span,
-.card-heading span,
-.account-card > span {
-    color: #D4AF37;
-    font-size: 10px;
+.dashboard-label {
+    color: #60a5fa;
+    font-size: 13px;
     font-weight: 600;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
 }
 
 .dashboard-header h1 {
-    color: #1E3A8A;
-    font-size: 30px;
-    margin: 6px 0;
+    color: #ffffff;
+    font-size: 38px;
+    font-weight: 700;
+    margin: 8px 0;
 }
 
 .dashboard-header p {
-    color: #6b7280;
-    font-size: 14px;
+    color: #9fb0c8;
     margin: 0;
 }
 
 
-/* Profile Button */
+/* ==========================================
+   STAT CARDS
+   ========================================== */
 
-.profile-btn {
-    border: none;
-    background: #1E3A8A;
-    color: #fff;
-    padding: 11px 20px;
-    border-radius: 25px;
-    font-weight: 500;
-    transition: .3s;
-}
-
-.profile-btn:hover {
-    background: #D4AF37;
-    transform: translateY(-3px);
-}
-
-
-/* Stats */
-
-.stat-card {
-    background: #fff;
-    padding: 22px;
+.user-stat-card {
+    background: #122442;
+    border: 1px solid #263b5c;
     border-radius: 18px;
-    display: flex;
-    align-items: center;
-    gap: 17px;
-    border: 1px solid #e5e7eb;
-    box-shadow: 0 10px 30px rgba(30,58,138,.08);
-    transition: .3s;
+    padding: 25px;
+    color: #fff;
+    min-height: 175px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .25);
+    transition: .3s ease;
 }
 
-.stat-card:hover {
-    transform: translateY(-5px);
+.user-stat-card:hover {
+    transform: translateY(-6px);
+    border-color: #3b82f6;
+    box-shadow: 0 18px 35px rgba(0, 0, 0, .35);
 }
 
 .stat-icon {
-    width: 52px;
-    height: 52px;
-    flex-shrink: 0;
-    border-radius: 14px;
-    background: #eff6ff;
-    color: #1E3A8A;
+    width: 50px;
+    height: 50px;
+    background: #1d4ed8;
+    border-radius: 13px;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 18px;
+}
+
+.stat-icon i {
+    color: #fff;
     font-size: 20px;
 }
 
-.stat-card h3 {
-    color: #1E3A8A;
-    font-size: 25px;
+.user-stat-card h3 {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.user-stat-card p {
+    color: #9fb0c8;
     margin: 0;
-}
-
-.stat-card p {
-    color: #6b7280;
-    font-size: 12px;
-    margin: 3px 0 0;
+    font-size: 14px;
 }
 
 
-/* Dashboard Card */
+/* ==========================================
+   DASHBOARD BOX
+   ========================================== */
 
-.dashboard-card {
-    background: #fff;
-    padding: 25px;
+.dashboard-box {
+    background: #122442;
+    border: 1px solid #263b5c;
     border-radius: 20px;
-    border: 1px solid #e5e7eb;
-    box-shadow: 0 10px 30px rgba(30,58,138,.09);
+    padding: 25px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .25);
 }
 
-.card-heading {
+
+/* ==========================================
+   BOX HEADING
+   ========================================== */
+
+.box-heading {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     margin-bottom: 20px;
 }
 
-.card-heading h2,
-.account-card h2 {
-    color: #1E3A8A;
+.box-heading h4 {
+    color: #ffffff;
+    margin: 0;
     font-size: 20px;
+    font-weight: 600;
+}
+
+.box-heading p {
+    color: #8fa3bf;
     margin: 5px 0 0;
-}
-
-.card-heading a {
-    color: #1E3A8A;
-    text-decoration: none;
-    font-size: 12px;
-}
-
-
-/* Favorite Property */
-
-.favorite-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 16px;
-    margin-bottom: 12px;
-    border: 1px solid #e5e7eb;
-    border-radius: 14px;
-    background: #fff;
-    transition: .3s;
-}
-
-.favorite-item:last-child {
-    margin-bottom: 0;
-}
-
-.favorite-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 22px rgba(30,58,138,.09);
-}
-
-.favorite-item img {
-    width: 105px;
-    height: 78px;
-    object-fit: cover;
-    border-radius: 11px;
-}
-
-.favorite-info {
-    flex: 1;
-}
-
-.favorite-info h3 {
-    color: #374151;
-    font-size: 15px;
-    margin: 0 0 6px;
-}
-
-.favorite-info p {
-    color: #6b7280;
-    font-size: 11px;
-    margin: 0 0 6px;
-}
-
-.favorite-info p i {
-    color: #1E3A8A;
-    margin-right: 4px;
-}
-
-.favorite-info strong {
-    color: #1E3A8A;
     font-size: 13px;
 }
 
+.box-heading > i {
+    color: #60a5fa;
+    font-size: 22px;
+}
 
-/* Heart */
 
-.heart-btn {
-    width: 38px;
-    height: 38px;
-    border: none;
+/* ==========================================
+   ACTIVITY CHART
+   ========================================== */
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+.chart-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+
+/* ==========================================
+   PROFILE
+   ========================================== */
+
+.profile-box {
+    text-align: center;
+    height: 100%;
+}
+
+.profile-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 15px;
     border-radius: 50%;
-    background: #fff8e5;
-    color: #D4AF37;
-    transition: .3s;
-}
-
-.heart-btn:hover,
-.heart-btn.saved {
-    background: #D4AF37;
-    color: #fff;
-    transform: scale(1.1);
-}
-
-
-/* Quick Actions */
-
-.action-btn {
+    background: #1d4ed8;
     display: flex;
     align-items: center;
-    gap: 12px;
-    background: #F3F4F6;
-    color: #374151;
-    text-decoration: none;
-    padding: 14px 15px;
-    border-radius: 11px;
-    margin-bottom: 10px;
-    font-size: 12px;
-    transition: .3s;
+    justify-content: center;
 }
 
-.action-btn i:first-child {
-    color: #1E3A8A;
+.profile-icon i {
+    color: #ffffff;
+    font-size: 28px;
 }
 
-.action-btn i:last-child {
-    margin-left: auto;
-    font-size: 10px;
+.profile-box h4 {
+    color: #ffffff;
+    margin-bottom: 5px;
 }
 
-.action-btn:hover {
-    background: #eff6ff;
-    color: #1E3A8A;
-    transform: translateX(5px);
+.profile-email {
+    color: #8fa3bf;
+    font-size: 13px;
+}
+
+.profile-info {
+    border-top: 1px solid #263b5c;
+    border-bottom: 1px solid #263b5c;
+    margin: 20px 0;
+    padding: 15px 0;
+}
+
+.profile-info div {
+    display: flex;
+    justify-content: space-between;
+    margin: 9px 0;
+}
+
+.profile-info span {
+    color: #8fa3bf;
+}
+
+.profile-info strong {
+    color: #ffffff;
 }
 
 
-/* Account */
+/* ==========================================
+   PROFILE BUTTON
+   ========================================== */
 
-.account-card {
-    margin-top: 20px;
-}
-
-.account-card p {
-    color: #6b7280;
-    font-size: 12px;
-    line-height: 1.7;
-    margin: 10px 0 18px;
-}
-
-
-/* Logout */
-
-.logout-btn {
+.dashboard-btn {
     width: 100%;
     border: none;
-    background: #1E3A8A;
-    color: #fff;
+    background: #2563eb;
+    color: #ffffff;
     padding: 11px;
-    border-radius: 25px;
-    font-size: 13px;
-    transition: .3s;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: .3s ease;
 }
 
-.logout-btn:hover {
-    background: #D4AF37;
+.dashboard-btn:hover {
+    background: #1d4ed8;
     transform: translateY(-2px);
 }
 
 
-/* Responsive */
+/* ==========================================
+   FAVORITES SECTION
+   ========================================== */
+
+.favorites-box {
+    margin-top: 24px;
+}
+
+
+/* ==========================================
+   FAVORITE CARD
+   ========================================== */
+
+.favorite-card {
+    background: #0d1c35;
+    border: 1px solid #263b5c;
+    border-radius: 16px;
+    overflow: hidden;
+    height: 100%;
+    transition: .3s ease;
+}
+
+.favorite-card:hover {
+    transform: translateY(-5px);
+    border-color: #3b82f6;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, .3);
+}
+
+
+/* ==========================================
+   PROPERTY IMAGE
+   ========================================== */
+
+.property-image {
+    height: 190px;
+    position: relative;
+    overflow: hidden;
+}
+
+.property-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: .4s ease;
+}
+
+.favorite-card:hover .property-image img {
+    transform: scale(1.05);
+}
+
+.property-image span {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #2563eb;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+
+/* ==========================================
+   PROPERTY CONTENT
+   ========================================== */
+
+.property-content {
+    padding: 18px;
+}
+
+.property-content h5 {
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.property-content p {
+    color: #8fa3bf;
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
+.property-content p i {
+    color: #60a5fa;
+    margin-right: 5px;
+}
+
+
+/* ==========================================
+   PROPERTY BOTTOM
+   ========================================== */
+
+.property-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.property-bottom strong {
+    color: #60a5fa;
+    font-size: 14px;
+}
+
+.heart-active {
+    color: #ef4444;
+    font-size: 18px;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width: 991px) {
+
+    .user-dashboard {
+        padding: 110px 15px 60px;
+    }
+
+    .dashboard-header h1 {
+        font-size: 34px;
+    }
+
+    .profile-box {
+        height: auto;
+    }
+
+}
+
 
 @media (max-width: 768px) {
 
-    .dashboard {
+    .user-dashboard {
         padding: 100px 15px 50px;
     }
 
     .dashboard-header {
-        padding: 22px;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 18px;
+        margin-bottom: 25px;
     }
 
     .dashboard-header h1 {
-        font-size: 25px;
+        font-size: 30px;
     }
 
-    .profile-btn {
-        width: 100%;
+    .dashboard-header p {
+        font-size: 14px;
     }
 
-    .favorite-item img {
-        width: 85px;
-        height: 65px;
+    .chart-container {
+        height: 260px;
     }
+
+    .dashboard-box {
+        padding: 20px;
+    }
+
+    .property-image {
+        height: 200px;
+    }
+
 }
 
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
 
-    .dashboard-card {
-        padding: 18px;
+    .dashboard-header h1 {
+        font-size: 26px;
     }
 
-    .favorite-item {
-        gap: 10px;
-        padding: 12px;
-    }
-
-    .favorite-item img {
-        width: 70px;
-        height: 58px;
-    }
-
-    .favorite-info h3 {
-        font-size: 13px;
-    }
-
-    .favorite-info p {
-        font-size: 10px;
-    }
-
-    .favorite-info strong {
+    .dashboard-label {
         font-size: 11px;
+        letter-spacing: 2px;
     }
 
-    .heart-btn {
-        width: 32px;
-        height: 32px;
+    .user-stat-card {
+        min-height: auto;
+        padding: 20px;
     }
+
+    .dashboard-box {
+        padding: 18px;
+        border-radius: 16px;
+    }
+
+    .box-heading h4 {
+        font-size: 18px;
+    }
+
+    .chart-container {
+        height: 230px;
+    }
+
+    .property-image {
+        height: 190px;
+    }
+
 }
-
-
 /* ==========================================
    PREMIUM RESPONIVE FOOTER STYLES
    ========================================== */
@@ -529,4 +610,27 @@ color:#2563eb;
 .footer-links li a:hover {
   color: #0d6efd !important; /* Changes to pure brand blue on hover */
   transform: translateX(4px); /* Moves nicely to the right */
+}
+
+
+
+
+/* Remove underline from Properties dropdown */
+.navbar .dropdown-toggle::after {
+    display: inline-block;
+    margin-left: .255em;
+    vertical-align: .255em;
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+    width: auto;
+    height: auto;
+    background: none;
+}
+
+.navbar .dropdown-toggle:focus::after,
+.navbar .dropdown-toggle:active::after {
+    width: auto !important;
+    background: none !important;
 }

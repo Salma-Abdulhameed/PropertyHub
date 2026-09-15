@@ -14,492 +14,413 @@
 </head>
 <body>
     
- <!-- Header Start -->
-    <header>
+<!-- Header Start -->
+<header>
 
     <!-- Navbar Start -->
-
     <nav class="navbar navbar-expand-lg custom-navbar fixed-top">
 
-    <div class="container">
+        <div class="container">
 
-    <!-- ========== Logo ========== -->
+            <!-- Logo -->
+            <a class="navbar-brand logo" href="index.html">
+                <i class="fa-solid fa-house"></i>
+                PropertyHub
+            </a>
 
-    <a class="navbar-brand logo" href="#">
-    <i class="fa-solid fa-house"></i>
-     PropertyHub</a>
+            <!-- Mobile Toggle Button -->
+            <button class="navbar-toggler border-0 shadow-none"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu">
 
-    <!-- Mobile Toggle Button  -->
+                <i class="fa-solid fa-bars"></i>
+            </button>
 
-    <button class="navbar-toggler border-0 shadow-none"
-    type="button"
-    data-bs-toggle="collapse"
-    data-bs-target="#navbarMenu">
-    <i class="fa-solid fa-bars"></i></button>
+            <!-- Navbar Menu -->
+            <div class="collapse navbar-collapse" id="navbarMenu">
 
-    <!--  Navbar Menu -->
+                <!-- Left Side Menu -->
+                <ul class="navbar-nav mx-auto">
 
-    <div class="collapse navbar-collapse" id="navbarMenu">
+                    <!-- Home -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
 
-    <!-- Left Side Menu -->
+                    <!-- Properties Dropdown -->
+                    <li class="nav-item dropdown">
 
-    <ul class="navbar-nav mx-auto">
+                        <a class="nav-link dropdown-toggle"
+                            href="#"
+                            role="button"
+                            data-bs-toggle="dropdown">
 
-    <!-- Home -->
+                            Properties
+                        </a>
 
-     <li class="nav-item"><a class="nav-link active" href="#">Home</a> </li>
+                        <ul class="dropdown-menu custom-dropdown">
 
-    <!-- Properties Dropdown -->
+                            <li>
+                                <a class="dropdown-item" href="property-details.html">
+                                    <i class="fa-solid fa-building"></i>
+                                    Buy Properties
+                                </a>
+                            </li>
 
-    <li class="nav-item dropdown">
+                            <li>
+                                <a class="dropdown-item" href="property-details.html">
+                                    <i class="fa-solid fa-key"></i>
+                                    Rent Properties
+                                </a>
+                            </li>
 
-    <a class="nav-link dropdown-toggle"
-    href="#"
-    role="button"
-    data-bs-toggle="dropdown">Properties</a>
-    <ul class="dropdown-menu custom-dropdown">
-    <li>
-    <a class="dropdown-item" href="#">
-    <i class="fa-solid fa-building"></i>
-    Buy Properties</a>
-    </li>
+                            <li>
+                                <a class="dropdown-item" href="sell-property.html">
+                                    <i class="fa-solid fa-tag"></i>
+                                    Sell Property
+                                </a>
+                            </li>
 
-    <li>
-    <a class="dropdown-item" href="#">
-    <i class="fa-solid fa-key"></i>
-    Rent Properties
-    </a>
-    </li>
-    <li>
-    <a class="dropdown-item" href="#">
-    <i class="fa-solid fa-tag"></i>
-    Sell Property
-    </a>
-    </li>
+                            <li>
+                                <a class="dropdown-item" href="new-projects.html">
+                                    <i class="fa-solid fa-city"></i>
+                                    New Projects
+                                </a>
+                            </li>
 
-    <li>
-    <a class="dropdown-item" href="#">
-    <i class="fa-solid fa-city"></i>
-    New Projects
-    </a>
-    </li>
-    </ul>
-    </li>
+                        </ul>
+                    </li>
 
-    <!-- Agents -->
-    <li class="nav-item">
-    <a class="nav-link" href="#">Agents</a>
-    </li>
+                    <!-- Agents -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="agents.html">Agents</a>
+                    </li>
 
-   <!-- Favorites -->
-   <li class="nav-item">
-   <a class="nav-link" href="#">
-    Favorites
-    </a>
-    </li>
+                    <!-- Favorites -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="favorites.html">
+                            Favorites
+                        </a>
+                    </li>
 
-    <!-- Contact -->
-    <li class="nav-item">
-    <a class="nav-link" href="#">
-    Contact
-    </a>
-    </li>
-    </ul>
+                    <!-- Contact -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            Contact
+                        </a>
+                    </li>
 
-    <!-- Right Side -->
-    <div class="d-flex align-items-center gap-3">
+                </ul>
 
-    <!-- Search -->
-    <button class="icon-btn">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    </button>
+                <!-- Right Side -->
+                <div class="d-flex align-items-center gap-3">
 
-    <!-- Login -->
-    <a href="#" class="btn login-btn">
-    Login</a>
+                    <!-- Search -->
+                    <button class="icon-btn">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
 
-     <!-- Sell Property -->
-     <a href="#" class="btn sell-btn">
-     Sell Property</a>
+                    <!-- Login -->
+                    <a href="login.html" class="btn login-btn">
+                        Login
+                    </a>
 
-    </div>
+                    <!-- Sell Property -->
+                    <a href="sell-property.html" class="btn sell-btn">
+                        Sell Property
+                    </a>
 
-    </div>
+                </div>
 
-    </div>
+            </div>
+        </div>
 
     </nav>
+    <!-- Navbar End -->
 
-     <!-- Navbar End -->
-    </header>
- <!-- Header End -->   
+</header>
+<!-- Header End -->
 
-
-  <!-- Admin Dashboard -->
+<!-- Admin Dashboard Start -->
 
 <section class="admin-dashboard">
 
-    <div class="container-fluid">
+    <div class="container">
 
-        <div class="row g-0">
+        <!-- Dashboard Header -->
+        <div class="admin-header">
 
-            <!-- Sidebar -->
-            <aside class="admin-sidebar">
+            <div>
+                <span>PROPERTYHUB ADMIN</span>
+                <h1>Admin Dashboard</h1>
+                <p>Manage users, properties and platform activity.</p>
+            </div>
 
-                <div class="admin-logo">
-                    <i class="fa-solid fa-house"></i>
-                    PropertyHub
-                </div>
+            <button class="admin-action-btn">
+                <i class="fa-solid fa-plus"></i>
+                Add Property
+            </button>
 
-                <p class="menu-title">MAIN MENU</p>
-
-                <a href="#" class="sidebar-link active">
-                    <i class="fa-solid fa-chart-line"></i>
-                    Dashboard
-                </a>
-
-                <a href="#" class="sidebar-link">
-                    <i class="fa-solid fa-users"></i>
-                    Users
-                </a>
-
-                <a href="#" class="sidebar-link">
-                    <i class="fa-solid fa-building"></i>
-                    Properties
-                </a>
-
-                <a href="#" class="sidebar-link">
-                    <i class="fa-solid fa-user-tie"></i>
-                    Agents
-                </a>
-
-                <a href="#" class="sidebar-link">
-                    <i class="fa-solid fa-message"></i>
-                    Messages
-                </a>
-
-                <p class="menu-title">ACCOUNT</p>
-
-                <a href="#" class="sidebar-link">
-                    <i class="fa-solid fa-gear"></i>
-                    Settings
-                </a>
-
-                <a href="#" class="sidebar-link logout-link">
-                    <i class="fa-solid fa-right-from-bracket"></i>
-                    Logout
-                </a>
-
-            </aside>
+        </div>
 
 
-            <!-- Main Content -->
-            <main class="admin-content">
+        <!-- Statistics Cards -->
+        <div class="row g-4 mb-4">
 
-                <!-- Top Header -->
-                <div class="admin-topbar">
+            <!-- Users -->
+            <div class="col-lg-3 col-md-6">
+                <div class="admin-stat-card">
+
+                    <div class="admin-stat-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
 
                     <div>
-                        <span>ADMIN PANEL</span>
-                        <h1>Dashboard</h1>
+                        <span>Total Users</span>
+                        <h3>245</h3>
                     </div>
 
-                    <div class="admin-profile">
-                        <div class="profile-icon">
-                            <i class="fa-solid fa-user"></i>
-                        </div>
+                </div>
+            </div>
+
+
+            <!-- Properties -->
+            <div class="col-lg-3 col-md-6">
+                <div class="admin-stat-card">
+
+                    <div class="admin-stat-icon">
+                        <i class="fa-solid fa-house"></i>
+                    </div>
+
+                    <div>
+                        <span>Properties</span>
+                        <h3>128</h3>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- Agents -->
+            <div class="col-lg-3 col-md-6">
+                <div class="admin-stat-card">
+
+                    <div class="admin-stat-icon">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+
+                    <div>
+                        <span>Total Agents</span>
+                        <h3>36</h3>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- Inquiries -->
+            <div class="col-lg-3 col-md-6">
+                <div class="admin-stat-card">
+
+                    <div class="admin-stat-icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+
+                    <div>
+                        <span>Inquiries</span>
+                        <h3>84</h3>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Charts Row -->
+        <div class="row g-4 mb-4">
+
+            <!-- Property Listings -->
+            <div class="col-lg-8">
+
+                <div class="admin-box">
+
+                    <div class="admin-box-heading">
 
                         <div>
-                            <strong>Admin</strong>
-                            <small>Administrator</small>
+                            <h4>Property Listings</h4>
+                            <p>Monthly property listing activity</p>
                         </div>
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                    </div>
+
+                    <div class="admin-chart-container">
+                        <canvas id="propertyChart"></canvas>
                     </div>
 
                 </div>
 
-
-                <!-- Stats -->
-                <div class="row g-4">
-
-                    <div class="col-xl-3 col-md-6">
-                        <div class="admin-stat">
-
-                            <div class="stat-icon">
-                                <i class="fa-solid fa-users"></i>
-                            </div>
-
-                            <div>
-                                <p>Total Users</p>
-                                <h2>1,248</h2>
-                                <small>+12% this month</small>
-                            </div>
-
-                        </div>
-                    </div>
+            </div>
 
 
-                    <div class="col-xl-3 col-md-6">
-                        <div class="admin-stat">
+            <!-- User Overview -->
+            <div class="col-lg-4">
 
-                            <div class="stat-icon">
-                                <i class="fa-solid fa-building"></i>
-                            </div>
+                <div class="admin-box">
 
-                            <div>
-                                <p>Total Properties</p>
-                                <h2>356</h2>
-                                <small>+8% this month</small>
-                            </div>
+                    <div class="admin-box-heading">
 
-                        </div>
-                    </div>
-
-
-                    <div class="col-xl-3 col-md-6">
-                        <div class="admin-stat">
-
-                            <div class="stat-icon">
-                                <i class="fa-solid fa-clock"></i>
-                            </div>
-
-                            <div>
-                                <p>Pending Listings</p>
-                                <h2>24</h2>
-                                <small>Needs review</small>
-                            </div>
-
-                        </div>
-                    </div>
-
-
-                    <div class="col-xl-3 col-md-6">
-                        <div class="admin-stat">
-
-                            <div class="stat-icon">
-                                <i class="fa-solid fa-message"></i>
-                            </div>
-
-                            <div>
-                                <p>Messages</p>
-                                <h2>86</h2>
-                                <small>12 unread</small>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-
-
-                <!-- Recent Properties -->
-                <div class="admin-card mt-4">
-
-                    <div class="card-title">
                         <div>
-                            <span>PROPERTY MANAGEMENT</span>
-                            <h2>Recent Properties</h2>
+                            <h4>User Overview</h4>
+                            <p>Users by role</p>
                         </div>
 
-                        <button class="view-all">View All</button>
+                        <i class="fa-solid fa-chart-pie"></i>
+
                     </div>
 
-
-                    <div class="table-responsive">
-
-                        <table>
-
-                            <thead>
-                                <tr>
-                                    <th>Property</th>
-                                    <th>Owner</th>
-                                    <th>Location</th>
-                                    <th>Price</th>
-                                    <th>Status</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-
-                                <tr>
-                                    <td>
-                                        <div class="property-name">
-                                            <img src="./images/luxuary-villa.png">
-                                            Luxury Villa
-                                        </div>
-                                    </td>
-
-                                    <td>Ahmed Khan</td>
-                                    <td>DHA Karachi</td>
-                                    <td>PKR 4.5 Crore</td>
-
-                                    <td>
-                                        <span class="status approved">
-                                            Approved
-                                        </span>
-                                    </td>
-                                </tr>
-
-
-                                <tr>
-                                    <td>
-                                        <div class="property-name">
-                                            <img src="./images/property-1.png">
-                                            Modern House
-                                        </div>
-                                    </td>
-
-                                    <td>Sara Ali</td>
-                                    <td>Gulshan Karachi</td>
-                                    <td>PKR 2.8 Crore</td>
-
-                                    <td>
-                                        <span class="status pending">
-                                            Pending
-                                        </span>
-                                    </td>
-                                </tr>
-
-
-                                <tr>
-                                    <td>
-                                        <div class="property-name">
-                                            <img src="./images/property-2.png">
-                                            Garden Villa
-                                        </div>
-                                    </td>
-
-                                    <td>Usman Malik</td>
-                                    <td>Bahria Lahore</td>
-                                    <td>PKR 5.2 Crore</td>
-
-                                    <td>
-                                        <span class="status approved">
-                                            Approved
-                                        </span>
-                                    </td>
-                                </tr>
-
-                            </tbody>
-
-                        </table>
-
+                    <div class="admin-chart-container">
+                        <canvas id="userOverviewChart"></canvas>
                     </div>
 
                 </div>
 
+            </div>
 
-                <!-- Users + Activity -->
-                <div class="row g-4 mt-1">
-
-                    <!-- Recent Users -->
-                    <div class="col-lg-8">
-
-                        <div class="admin-card">
-
-                            <div class="card-title">
-                                <div>
-                                    <span>USER MANAGEMENT</span>
-                                    <h2>Recent Users</h2>
-                                </div>
-
-                                <button class="view-all">View All</button>
-                            </div>
+        </div>
 
 
-                            <div class="user-list">
+        <!-- Recent Users -->
+        <div class="admin-box">
 
-                                <div class="user-row">
-                                    <div class="user-avatar">AK</div>
+            <div class="admin-box-heading">
 
-                                    <div class="user-info">
-                                        <strong>Ahmed Khan</strong>
-                                        <small>ahmed@example.com</small>
-                                    </div>
-
-                                    <span class="user-status active-status">
-                                        Active
-                                    </span>
-                                </div>
-
-
-                                <div class="user-row">
-                                    <div class="user-avatar">SA</div>
-
-                                    <div class="user-info">
-                                        <strong>Sara Ali</strong>
-                                        <small>sara@example.com</small>
-                                    </div>
-
-                                    <span class="user-status active-status">
-                                        Active
-                                    </span>
-                                </div>
-
-
-                                <div class="user-row">
-                                    <div class="user-avatar">UM</div>
-
-                                    <div class="user-info">
-                                        <strong>Usman Malik</strong>
-                                        <small>usman@example.com</small>
-                                    </div>
-
-                                    <span class="user-status blocked-status">
-                                        Blocked
-                                    </span>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- Quick Actions -->
-                    <div class="col-lg-4">
-
-                        <div class="admin-card">
-
-                            <div class="card-title">
-                                <div>
-                                    <span>QUICK ACCESS</span>
-                                    <h2>Quick Actions</h2>
-                                </div>
-                            </div>
-
-
-                            <a href="#" class="quick-action">
-                                <i class="fa-solid fa-plus"></i>
-                                Add Property
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-
-                            <a href="#" class="quick-action">
-                                <i class="fa-solid fa-users"></i>
-                                Manage Users
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-
-                            <a href="#" class="quick-action">
-                                <i class="fa-solid fa-list-check"></i>
-                                Review Listings
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-
-                            <a href="#" class="quick-action">
-                                <i class="fa-solid fa-gear"></i>
-                                Settings
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-
-                        </div>
-
-                    </div>
-
+                <div>
+                    <h4>Recent Users</h4>
+                    <p>Recently registered users</p>
                 </div>
 
-            </main>
+                <button class="view-all-btn">
+                    View All
+                </button>
+
+            </div>
+
+
+            <!-- Users Table -->
+            <div class="table-responsive">
+
+                <table class="table admin-table align-middle">
+
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>
+                                <i class="fa-solid fa-circle-user user-table-icon"></i>
+                                Ali Khan
+                            </td>
+
+                            <td>ali@gmail.com</td>
+
+                            <td>
+                                <span class="role-badge">
+                                    User
+                                </span>
+                            </td>
+
+                            <td>
+                                <span class="status-active">
+                                    Active
+                                </span>
+                            </td>
+
+                            <td>
+                                <button class="table-btn">
+                                    View
+                                </button>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <i class="fa-solid fa-circle-user user-table-icon"></i>
+                                Sara Ahmed
+                            </td>
+
+                            <td>sara@gmail.com</td>
+
+                            <td>
+                                <span class="role-badge">
+                                    User
+                                </span>
+                            </td>
+
+                            <td>
+                                <span class="status-active">
+                                    Active
+                                </span>
+                            </td>
+
+                            <td>
+                                <button class="table-btn">
+                                    View
+                                </button>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <i class="fa-solid fa-circle-user user-table-icon"></i>
+                                Hamza Ali
+                            </td>
+
+                            <td>hamza@gmail.com</td>
+
+                            <td>
+                                <span class="role-badge">
+                                    Agent
+                                </span>
+                            </td>
+
+                            <td>
+                                <span class="status-blocked">
+                                    Blocked
+                                </span>
+                            </td>
+
+                            <td>
+                                <button class="table-btn">
+                                    View
+                                </button>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
 
         </div>
 
@@ -507,6 +428,7 @@
 
 </section>
 
+<!-- Admin Dashboard End -->
 
 <!-- Footer Start -->
 
@@ -853,8 +775,15 @@
 
 
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
- <script src="admin-dashbaord.js"></script>      
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Admin Dashboard JS -->
+<script src="admin-dashbaord.js"></script>   
 </body>
 </html>

@@ -15,284 +15,214 @@
 
 </head>
 <body>
-
-    <!-- Header Start -->
-    <header>
+<!-- Header Start -->
+<header>
 
     <!-- Navbar Start -->
-
     <nav class="navbar navbar-expand-lg custom-navbar fixed-top">
 
-    <div class="container">
+        <div class="container">
 
-    <!-- ========== Logo ========== -->
+            <!-- Logo -->
+            <a class="navbar-brand logo" href="index.html">
+                <i class="fa-solid fa-house"></i>
+                PropertyHub
+            </a>
 
-    <a class="navbar-brand logo" href="#">
-    <i class="fa-solid fa-house"></i>
-     PropertyHub</a>
+            <!-- Mobile Toggle Button -->
+            <button class="navbar-toggler border-0 shadow-none"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu">
 
-    <!-- Mobile Toggle Button  -->
+                <i class="fa-solid fa-bars"></i>
+            </button>
 
-    <button class="navbar-toggler border-0 shadow-none"
-    type="button"
-    data-bs-toggle="collapse"
-    data-bs-target="#navbarMenu">
-    <i class="fa-solid fa-bars"></i></button>
+            <!-- Navbar Menu -->
+            <div class="collapse navbar-collapse" id="navbarMenu">
 
-    <!--  Navbar Menu -->
+                <!-- Left Side Menu -->
+                <ul class="navbar-nav mx-auto">
 
-    <div class="collapse navbar-collapse" id="navbarMenu">
+                    <!-- Home -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
 
-    <!-- Left Side Menu -->
+                    <!-- Properties Dropdown -->
+                    <li class="nav-item dropdown">
 
-    <ul class="navbar-nav mx-auto">
+                        <a class="nav-link dropdown-toggle"
+                            href="#"
+                            role="button"
+                            data-bs-toggle="dropdown">
 
-    <!-- Home -->
+                            Properties
+                        </a>
 
-     <li class="nav-item"><a class="nav-link active" href="#">Home</a> </li>
+                        <ul class="dropdown-menu custom-dropdown">
 
-    <!-- Properties Dropdown -->
+                            <li>
+                                <a class="dropdown-item" href="property-details.html">
+                                    <i class="fa-solid fa-building"></i>
+                                    Buy Properties
+                                </a>
+                            </li>
 
-    <li class="nav-item dropdown">
+                            <li>
+                                <a class="dropdown-item" href="property-details.html">
+                                    <i class="fa-solid fa-key"></i>
+                                    Rent Properties
+                                </a>
+                            </li>
 
-    <a class="nav-link dropdown-toggle"
-    href="#"
-    role="button"
-    data-bs-toggle="dropdown">Properties</a>
-    <ul class="dropdown-menu custom-dropdown">
-    <li>
-    <a class="dropdown-item" href="#">
-    <i class="fa-solid fa-building"></i>
-    Buy Properties</a>
-    </li>
+                            <li>
+                                <a class="dropdown-item" href="sell-property.html">
+                                    <i class="fa-solid fa-tag"></i>
+                                    Sell Property
+                                </a>
+                            </li>
 
-    <li>
-    <a class="dropdown-item" href="#">
-    <i class="fa-solid fa-key"></i>
-    Rent Properties
-    </a>
-    </li>
-    <li>
-    <a class="dropdown-item" href="#">
-    <i class="fa-solid fa-tag"></i>
-    Sell Property
-    </a>
-    </li>
+                            <li>
+                                <a class="dropdown-item" href="new-projects.html">
+                                    <i class="fa-solid fa-city"></i>
+                                    New Projects
+                                </a>
+                            </li>
 
-    <li>
-    <a class="dropdown-item" href="#">
-    <i class="fa-solid fa-city"></i>
-    New Projects
-    </a>
-    </li>
-    </ul>
-    </li>
+                        </ul>
+                    </li>
 
-    <!-- Agents -->
-    <li class="nav-item">
-    <a class="nav-link" href="#">Agents</a>
-    </li>
+                    <!-- Agents -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="agents.html">Agents</a>
+                    </li>
 
-   <!-- Favorites -->
-   <li class="nav-item">
-   <a class="nav-link" href="#">
-    Favorites
-    </a>
-    </li>
+                    <!-- Favorites -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="favorites.html">
+                            Favorites
+                        </a>
+                    </li>
 
-    <!-- Contact -->
-    <li class="nav-item">
-    <a class="nav-link" href="#">
-    Contact
-    </a>
-    </li>
-    </ul>
+                    <!-- Contact -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            Contact
+                        </a>
+                    </li>
 
-    <!-- Right Side -->
-    <div class="d-flex align-items-center gap-3">
+                </ul>
 
-    <!-- Search -->
-    <button class="icon-btn">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    </button>
+                <!-- Right Side -->
+                <div class="d-flex align-items-center gap-3">
 
-    <!-- Login -->
-    <a href="#" class="btn login-btn">
-    Login</a>
+                    <!-- Search -->
+                    <button class="icon-btn">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
 
-     <!-- Sell Property -->
-     <a href="#" class="btn sell-btn">
-     Sell Property</a>
+                    <!-- Login -->
+                    <a href="login.html" class="btn login-btn">
+                        Login
+                    </a>
 
-    </div>
-    </div>
-</div>
+                    <!-- Sell Property -->
+                    <a href="sell-property.html" class="btn sell-btn">
+                        Sell Property
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+
     </nav>
- <!-- Navbar End -->
-    </header>
- <!-- Header End -->   
+    <!-- Navbar End -->
 
-<!-- User Dashboard Start -->
+</header>
+<!-- Header End -->
 
-<section class="dashboard">
+
+ <!-- User Dashboard Start -->
+
+<section class="user-dashboard">
 
     <div class="container">
 
         <!-- Dashboard Header -->
         <div class="dashboard-header">
-
-            <div>
-                <span>PROPERTYHUB</span>
-                <h1>Welcome Back!</h1>
-                <p>Manage your properties, favorites and account.</p>
-            </div>
-
-            <button class="profile-btn">
-                <i class="fa-solid fa-user"></i>
-                My Profile
-            </button>
-
+            <span class="dashboard-label">PROPERTYHUB</span>
+            <h1>Welcome Back!</h1>
+            <p>Manage your properties and saved listings.</p>
         </div>
 
 
-        <!-- Stats -->
+        <!-- Stats Cards -->
         <div class="row g-4 mb-4">
 
-            <div class="col-lg-4 col-md-6">
-                <div class="stat-card">
-
-                    <div class="stat-icon">
-                        <i class="fa-solid fa-heart"></i>
-                    </div>
-
-                    <div>
-                        <h3>12</h3>
-                        <p>Favorite Properties</p>
-                    </div>
-
-                </div>
-            </div>
-
-
-            <div class="col-lg-4 col-md-6">
-                <div class="stat-card">
-
+            <div class="col-lg-3 col-md-6">
+                <div class="user-stat-card">
                     <div class="stat-icon">
                         <i class="fa-solid fa-house"></i>
                     </div>
-
-                    <div>
-                        <h3>03</h3>
-                        <p>My Properties</p>
-                    </div>
-
+                    <h3>12</h3>
+                    <p>Viewed Properties</p>
                 </div>
             </div>
 
-
-            <div class="col-lg-4 col-md-6">
-                <div class="stat-card">
-
+            <div class="col-lg-3 col-md-6">
+                <div class="user-stat-card">
                     <div class="stat-icon">
-                        <i class="fa-solid fa-message"></i>
+                        <i class="fa-solid fa-heart"></i>
                     </div>
+                    <h3>8</h3>
+                    <p>Favorite Properties</p>
+                </div>
+            </div>
 
-                    <div>
-                        <h3>05</h3>
-                        <p>Messages</p>
+            <div class="col-lg-3 col-md-6">
+                <div class="user-stat-card">
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-envelope"></i>
                     </div>
+                    <h3>5</h3>
+                    <p>Inquiries</p>
+                </div>
+            </div>
 
+            <div class="col-lg-3 col-md-6">
+                <div class="user-stat-card">
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+                    <h3>3</h3>
+                    <p>Appointments</p>
                 </div>
             </div>
 
         </div>
 
 
+        <!-- Main Dashboard Row -->
         <div class="row g-4">
 
-            <!-- Favorite Properties -->
+            <!-- Activity Chart -->
             <div class="col-lg-8">
 
-                <div class="dashboard-card">
+                <div class="dashboard-box">
 
-                    <div class="card-heading">
-
+                    <div class="box-heading">
                         <div>
-                            <span>MY FAVORITES</span>
-                            <h2>Favorite Properties</h2>
+                            <h4>My Activity</h4>
+                            <p>Property activity overview</p>
                         </div>
 
-                        <a href="#">View All</a>
-
+                        <i class="fa-solid fa-chart-column"></i>
                     </div>
 
-
-                    <!-- Property 1 -->
-                    <div class="favorite-item">
-
-                        <img src="./images/luxuary-villa.png" alt="Luxury Villa">
-
-                        <div class="favorite-info">
-                            <h3>Luxury Family Villa</h3>
-
-                            <p>
-                                <i class="fa-solid fa-location-dot"></i>
-                                DHA, Karachi
-                            </p>
-
-                            <strong>PKR 4.5 Crore</strong>
-                        </div>
-
-                        <button class="heart-btn">
-                            <i class="fa-solid fa-heart"></i>
-                        </button>
-
-                    </div>
-
-
-                    <!-- Property 2 -->
-                    <div class="favorite-item">
-
-                        <img src="./images/property-3.png" alt="Modern House">
-
-                        <div class="favorite-info">
-                            <h3>Modern Family House</h3>
-
-                            <p>
-                                <i class="fa-solid fa-location-dot"></i>
-                                Gulshan, Karachi
-                            </p>
-
-                            <strong>PKR 2.8 Crore</strong>
-                        </div>
-
-                        <button class="heart-btn">
-                            <i class="fa-solid fa-heart"></i>
-                        </button>
-
-                    </div>
-
-
-                    <!-- Property 3 -->
-                    <div class="favorite-item">
-
-                        <img src="./images/property-2.png" alt="Garden Villa">
-
-                        <div class="favorite-info">
-                            <h3>Beautiful Garden Villa</h3>
-
-                            <p>
-                                <i class="fa-solid fa-location-dot"></i>
-                                Bahria Town, Lahore
-                            </p>
-
-                            <strong>PKR 5.2 Crore</strong>
-                        </div>
-
-                        <button class="heart-btn">
-                            <i class="fa-solid fa-heart"></i>
-                        </button>
-
+                    <div class="chart-container">
+                        <canvas id="userActivityChart"></canvas>
                     </div>
 
                 </div>
@@ -300,68 +230,128 @@
             </div>
 
 
-            <!-- Right Side -->
+            <!-- Profile -->
             <div class="col-lg-4">
 
-                <!-- Quick Actions -->
-                <div class="dashboard-card">
+                <div class="dashboard-box profile-box">
 
-                    <div class="card-heading">
-
-                        <div>
-                            <span>QUICK ACCESS</span>
-                            <h2>Quick Actions</h2>
-                        </div>
-
+                    <div class="profile-icon">
+                        <i class="fa-solid fa-user"></i>
                     </div>
 
+                    <h4>My Profile</h4>
+                    <p class="profile-email">user@propertyhub.com</p>
 
-                    <a href="sell-property.html" class="action-btn">
-                        <i class="fa-solid fa-plus"></i>
-                        List New Property
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
+                    <div class="profile-info">
+                        <div>
+                            <span>Name</span>
+                            <strong>Property User</strong>
+                        </div>
 
+                        <div>
+                            <span>Role</span>
+                            <strong>Buyer</strong>
+                        </div>
+                    </div>
 
-                    <a href="property-details.html" class="action-btn">
-                        <i class="fa-solid fa-building"></i>
-                        Browse Properties
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-
-
-                    <a href="#" class="action-btn">
-                        <i class="fa-solid fa-user"></i>
+                    <button class="dashboard-btn">
                         Edit Profile
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-
-
-                    <a href="#" class="action-btn">
-                        <i class="fa-solid fa-message"></i>
-                        My Messages
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
+                    </button>
 
                 </div>
 
+            </div>
 
-                <!-- Account -->
-                <div class="dashboard-card account-card">
+        </div>
 
-                    <span>ACCOUNT</span>
 
-                    <h2>My Account</h2>
+        <!-- Favorite Properties -->
+        <div class="dashboard-box favorites-box mt-4">
 
-                    <p>
-                        Manage your profile and account settings.
-                    </p>
+            <div class="box-heading">
+                <div>
+                    <h4>Favorite Properties</h4>
+                    <p>Your saved properties</p>
+                </div>
 
-                    <button class="logout-btn" id="logoutBtn">
-                        <i class="fa-solid fa-right-from-bracket"></i>
-                        Logout
-                    </button>
+                <i class="fa-solid fa-heart"></i>
+            </div>
 
+
+            <div class="row g-4">
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="favorite-card">
+
+                        <div class="property-image">
+                            <img src="./images/luxuary-villa.png" alt="Property">
+                            <span>For Sale</span>
+                        </div>
+
+                        <div class="property-content">
+                            <h5>Modern Family Villa</h5>
+                            <p>
+                                <i class="fa-solid fa-location-dot"></i>
+                                DHA Lahore
+                            </p>
+
+                            <div class="property-bottom">
+                                <strong>PKR 2.5 Crore</strong>
+                                <i class="fa-solid fa-heart heart-active"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="favorite-card">
+
+                        <div class="property-image">
+                            <img src="./images/property-3.png" alt="Property">
+                            <span>For Rent</span>
+                        </div>
+
+                        <div class="property-content">
+                            <h5>Luxury Apartment</h5>
+                            <p>
+                                <i class="fa-solid fa-location-dot"></i>
+                                Clifton Karachi
+                            </p>
+
+                            <div class="property-bottom">
+                                <strong>PKR 85,000</strong>
+                                <i class="fa-solid fa-heart heart-active"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="favorite-card">
+
+                        <div class="property-image">
+                            <img src="./images/property-2.png" alt="Property">
+                            <span>For Sale</span>
+                        </div>
+
+                        <div class="property-content">
+                            <h5>Premium House</h5>
+                            <p>
+                                <i class="fa-solid fa-location-dot"></i>
+                                Bahria Town
+                            </p>
+
+                            <div class="property-bottom">
+                                <strong>PKR 3.2 Crore</strong>
+                                <i class="fa-solid fa-heart heart-active"></i>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
 
             </div>
@@ -373,7 +363,6 @@
 </section>
 
 <!-- User Dashboard End -->
-
 
 
 <!-- Footer Start -->
@@ -715,10 +704,14 @@
 
 <!-- Footer End -->
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
- <script src="user-dashbaord.js"></script>       
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="user-dashbaord.js"></script>
 </body>
 </html>

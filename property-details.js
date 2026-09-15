@@ -1,59 +1,47 @@
-///// Nvbar Strat ////
+// ==========================================
+// ACTIVE NAVBAR LINK
+// ==========================================
 
-// Navbar Scroll
-const navbar = document.querySelector(".custom-navbar");
+const currentPage =
+    window.location.pathname.split("/").pop() || "index.html";
 
-window.addEventListener("scroll", () => {
-    if (navbar) {
-        navbar.classList.toggle("scrolled", window.scrollY > 50);
+document.querySelectorAll(".navbar-nav .nav-link").forEach(link => {
+
+    const href = link.getAttribute("href");
+
+    if (href && href !== "#") {
+
+        if (href === currentPage) {
+            link.classList.add("active");
+        } else {
+            link.classList.remove("active");
+        }
+
     }
 });
 
 
-// Active Nav Link
-const navLinks = document.querySelectorAll(".nav-link");
+// ==========================================
+// NAVBAR SCROLL EFFECT
+// ==========================================
 
-navLinks.forEach(link => {
-    link.addEventListener("click", () => {
-        navLinks.forEach(item => {
-            item.classList.remove("active");
-        });
+window.addEventListener("scroll", function () {
 
-        link.classList.add("active");
-    });
+    const navbar = document.querySelector(".custom-navbar");
+
+    if (navbar) {
+
+        if (window.scrollY > 50) {
+            navbar.classList.add("scrolled");
+        } else {
+            navbar.classList.remove("scrolled");
+        }
+
+    }
+
 });
 
-
-// Search Button
-const searchBtn = document.querySelector(".icon-btn");
-
-if (searchBtn) {
-    searchBtn.addEventListener("click", () => {
-        alert("Search Feature Coming Soon 🔍");
-    });
-}
-
-
-// Properties Dropdown
-const dropdown = document.querySelector(".dropdown");
-
-if (dropdown && window.innerWidth > 992) {
-
-    const dropdownToggle = dropdown.querySelector(".dropdown-toggle");
-
-    dropdown.addEventListener("mouseenter", () => {
-        bootstrap.Dropdown
-            .getOrCreateInstance(dropdownToggle)
-            .show();
-    });
-
-    dropdown.addEventListener("mouseleave", () => {
-        bootstrap.Dropdown
-            .getOrCreateInstance(dropdownToggle)
-            .hide();
-    });
-}
-// //// Navbar End /////
+// navbar end ////
 
 // Property Search
 

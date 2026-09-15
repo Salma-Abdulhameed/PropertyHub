@@ -1,121 +1,134 @@
-// Navbar Start /////
+// ==========================================
+// ACTIVE NAVBAR LINK
+// ==========================================
 
-// Navbar Scroll
-const navbar = document.querySelector(".custom-navbar");
+const currentPage =
+    window.location.pathname.split("/").pop() || "index.html";
 
-window.addEventListener("scroll", () => {
-    if (navbar) {
-        navbar.classList.toggle("scrolled", window.scrollY > 50);
+document.querySelectorAll(".navbar-nav .nav-link").forEach(link => {
+
+    const href = link.getAttribute("href");
+
+    if (href && href !== "#") {
+
+        if (href === currentPage) {
+            link.classList.add("active");
+        } else {
+            link.classList.remove("active");
+        }
+
     }
 });
 
 
-// Active Nav Link
-const navLinks = document.querySelectorAll(".nav-link");
+// ==========================================
+// NAVBAR SCROLL EFFECT
+// ==========================================
 
-navLinks.forEach(link => {
-    link.addEventListener("click", () => {
-        navLinks.forEach(item => {
-            item.classList.remove("active");
-        });
+window.addEventListener("scroll", function () {
 
-        link.classList.add("active");
-    });
+    const navbar = document.querySelector(".custom-navbar");
+
+    if (navbar) {
+
+        if (window.scrollY > 50) {
+            navbar.classList.add("scrolled");
+        } else {
+            navbar.classList.remove("scrolled");
+        }
+
+    }
+
 });
 
+// navbar end ////
 
-// Search Button
-const searchBtn = document.querySelector(".icon-btn");
+// Property Listings Chart
 
-if (searchBtn) {
-    searchBtn.addEventListener("click", () => {
-        alert("Search Feature Coming Soon 🔍");
+const propertyChart = document.getElementById("propertyChart");
+
+if (propertyChart) {
+
+    new Chart(propertyChart, {
+        type: "line",
+
+        data: {
+            labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+
+            datasets: [{
+                label: "Properties Listed",
+                data: [8, 12, 10, 18, 15, 24],
+                borderWidth: 3,
+                tension: 0.4
+            }]
+        },
+
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+
+            plugins: {
+                legend: {
+                    labels: {
+                        color: "#ffffff"
+                    }
+                }
+            },
+
+            scales: {
+                x: {
+                    ticks: {
+                        color: "#9fb0c8"
+                    }
+                },
+
+                y: {
+                    beginAtZero: true,
+
+                    ticks: {
+                        color: "#9fb0c8"
+                    }
+                }
+            }
+        }
     });
 }
 
 
-// Properties Dropdown
-const dropdown = document.querySelector(".dropdown");
+// User Overview Chart
 
-if (dropdown && window.innerWidth > 992) {
+const userOverviewChart =
+    document.getElementById("userOverviewChart");
 
-    const dropdownToggle = dropdown.querySelector(".dropdown-toggle");
+if (userOverviewChart) {
 
-    dropdown.addEventListener("mouseenter", () => {
-        bootstrap.Dropdown
-            .getOrCreateInstance(dropdownToggle)
-            .show();
+    new Chart(userOverviewChart, {
+        type: "doughnut",
+
+        data: {
+            labels: ["Users", "Agents", "Admins"],
+
+            datasets: [{
+                data: [245, 36, 3],
+                borderWidth: 0
+            }]
+        },
+
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+
+            plugins: {
+                legend: {
+                    position: "bottom",
+
+                    labels: {
+                        color: "#ffffff"
+                    }
+                }
+            }
+        }
     });
-
-    dropdown.addEventListener("mouseleave", () => {
-        bootstrap.Dropdown
-            .getOrCreateInstance(dropdownToggle)
-            .hide();
-    });
-}
-
-// Navbar End /////
-
-
-// Sidebar Active Link
-
-const sidebarLinks = document.querySelectorAll(".sidebar-link");
-
-sidebarLinks.forEach(link => {
-
-    link.addEventListener("click", () => {
-
-        sidebarLinks.forEach(item => {
-            item.classList.remove("active");
-        });
-
-        link.classList.add("active");
-
-    });
-
-});
-
-
-// View All Buttons
-
-const viewButtons = document.querySelectorAll(".view-all");
-
-viewButtons.forEach(button => {
-
-    button.addEventListener("click", () => {
-        alert("This feature will be connected with Firebase.");
-    });
-
-});
-
-
-// Quick Actions
-
-const quickActions = document.querySelectorAll(".quick-action");
-
-quickActions.forEach(action => {
-
-    action.addEventListener("click", () => {
-        console.log("Quick action selected");
-    });
-
-});
-
-
-// Logout
-
-const logoutLink = document.querySelector(".logout-link");
-
-if (logoutLink) {
-
-    logoutLink.addEventListener("click", (e) => {
-
-        e.preventDefault();
-
-        alert("Logout will be connected with Firebase.");
-
-    });
-
 }
 
 

@@ -1,87 +1,110 @@
-///// Nvbar Strat ////
+// ==========================================
+// ACTIVE NAVBAR LINK
+// ==========================================
 
-// Navbar Scroll
-const navbar = document.querySelector(".custom-navbar");
+const currentPage =
+    window.location.pathname.split("/").pop() || "index.html";
 
-window.addEventListener("scroll", () => {
-    if (navbar) {
-        navbar.classList.toggle("scrolled", window.scrollY > 50);
+document.querySelectorAll(".navbar-nav .nav-link").forEach(link => {
+
+    const href = link.getAttribute("href");
+
+    if (href && href !== "#") {
+
+        if (href === currentPage) {
+            link.classList.add("active");
+        } else {
+            link.classList.remove("active");
+        }
+
     }
 });
 
 
-// Active Nav Link
-const navLinks = document.querySelectorAll(".nav-link");
+// ==========================================
+// NAVBAR SCROLL EFFECT
+// ==========================================
 
-navLinks.forEach(link => {
-    link.addEventListener("click", () => {
-        navLinks.forEach(item => {
-            item.classList.remove("active");
-        });
+window.addEventListener("scroll", function () {
 
-        link.classList.add("active");
-    });
-});
+    const navbar = document.querySelector(".custom-navbar");
 
+    if (navbar) {
 
-// Search Button
-const searchBtn = document.querySelector(".icon-btn");
+        if (window.scrollY > 50) {
+            navbar.classList.add("scrolled");
+        } else {
+            navbar.classList.remove("scrolled");
+        }
 
-if (searchBtn) {
-    searchBtn.addEventListener("click", () => {
-        alert("Search Feature Coming Soon 🔍");
-    });
-}
-
-
-// Properties Dropdown
-const dropdown = document.querySelector(".dropdown");
-
-if (dropdown && window.innerWidth > 992) {
-
-    const dropdownToggle = dropdown.querySelector(".dropdown-toggle");
-
-    dropdown.addEventListener("mouseenter", () => {
-        bootstrap.Dropdown
-            .getOrCreateInstance(dropdownToggle)
-            .show();
-    });
-
-    dropdown.addEventListener("mouseleave", () => {
-        bootstrap.Dropdown
-            .getOrCreateInstance(dropdownToggle)
-            .hide();
-    });
-}
-// //// Navbar End /////
-
-
-
-// Favorite Button
-
-const heartButtons = document.querySelectorAll(".heart-btn");
-
-heartButtons.forEach(button => {
-
-    button.addEventListener("click", () => {
-        button.classList.toggle("saved");
-    });
+    }
 
 });
 
+// User Dashboard Chart
 
-// Logout Button
+const userChart = document.getElementById("userActivityChart");
 
-const logoutBtn = document.querySelector("#logoutBtn");
+if (userChart) {
 
-if (logoutBtn) {
+    new Chart(userChart, {
 
-    logoutBtn.addEventListener("click", () => {
-        alert("Logout will be connected with Firebase.");
+        type: "bar",
+
+        data: {
+            labels: [
+                "Viewed",
+                "Favorites",
+                "Inquiries",
+                "Appointments"
+            ],
+
+            datasets: [{
+                label: "Activity",
+                data: [12, 8, 5, 3],
+                borderWidth: 1
+            }]
+        },
+
+        options: {
+            responsive: true,
+
+            maintainAspectRatio: false,
+
+            plugins: {
+                legend: {
+                    labels: {
+                        color: "#ffffff"
+                    }
+                }
+            },
+
+            scales: {
+                x: {
+                    ticks: {
+                        color: "#9fb0c8"
+                    },
+
+                    grid: {
+                        display: false
+                    }
+                },
+
+                y: {
+                    beginAtZero: true,
+
+                    ticks: {
+                        color: "#9fb0c8"
+                    },
+
+                    grid: {
+                        color: "#263b5c"
+                    }
+                }
+            }
+        }
     });
-
 }
-
 
 
 // Back To Top

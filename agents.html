@@ -16,124 +16,132 @@
 <body>
 
  <!-- Header Start -->
-    <header>
+<header>
 
     <!-- Navbar Start -->
-
     <nav class="navbar navbar-expand-lg custom-navbar fixed-top">
 
-    <div class="container">
+        <div class="container">
 
-    <!-- ========== Logo ========== -->
+            <!-- Logo -->
+            <a class="navbar-brand logo" href="index.html">
+                <i class="fa-solid fa-house"></i>
+                PropertyHub
+            </a>
 
-    <a class="navbar-brand logo" href="#">
-    <i class="fa-solid fa-house"></i>
-     PropertyHub</a>
+            <!-- Mobile Toggle Button -->
+            <button class="navbar-toggler border-0 shadow-none"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu">
 
-    <!-- Mobile Toggle Button  -->
+                <i class="fa-solid fa-bars"></i>
+            </button>
 
-    <button class="navbar-toggler border-0 shadow-none"
-    type="button"
-    data-bs-toggle="collapse"
-    data-bs-target="#navbarMenu">
-    <i class="fa-solid fa-bars"></i></button>
+            <!-- Navbar Menu -->
+            <div class="collapse navbar-collapse" id="navbarMenu">
 
-    <!--  Navbar Menu -->
+                <!-- Left Side Menu -->
+                <ul class="navbar-nav mx-auto">
 
-    <div class="collapse navbar-collapse" id="navbarMenu">
+                    <!-- Home -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
 
-    <!-- Left Side Menu -->
+                    <!-- Properties Dropdown -->
+                    <li class="nav-item dropdown">
 
-    <ul class="navbar-nav mx-auto">
+                        <a class="nav-link dropdown-toggle"
+                            href="#"
+                            role="button"
+                            data-bs-toggle="dropdown">
 
-    <!-- Home -->
+                            Properties
+                        </a>
 
-     <li class="nav-item"><a class="nav-link active" href="#">Home</a> </li>
+                        <ul class="dropdown-menu custom-dropdown">
 
-    <!-- Properties Dropdown -->
+                            <li>
+                                <a class="dropdown-item" href="property-details.html">
+                                    <i class="fa-solid fa-building"></i>
+                                    Buy Properties
+                                </a>
+                            </li>
 
-    <li class="nav-item dropdown">
+                            <li>
+                                <a class="dropdown-item" href="property-details.html">
+                                    <i class="fa-solid fa-key"></i>
+                                    Rent Properties
+                                </a>
+                            </li>
 
-    <a class="nav-link dropdown-toggle"
-    href="#"
-    role="button"
-    data-bs-toggle="dropdown">Properties</a>
-    <ul class="dropdown-menu custom-dropdown">
-    <li>
-    <a class="dropdown-item" href="#">
-    <i class="fa-solid fa-building"></i>
-    Buy Properties</a>
-    </li>
+                            <li>
+                                <a class="dropdown-item" href="sell-property.html">
+                                    <i class="fa-solid fa-tag"></i>
+                                    Sell Property
+                                </a>
+                            </li>
 
-    <li>
-    <a class="dropdown-item" href="#">
-    <i class="fa-solid fa-key"></i>
-    Rent Properties
-    </a>
-    </li>
-    <li>
-    <a class="dropdown-item" href="#">
-    <i class="fa-solid fa-tag"></i>
-    Sell Property
-    </a>
-    </li>
+                            <li>
+                                <a class="dropdown-item" href="new-projects.html">
+                                    <i class="fa-solid fa-city"></i>
+                                    New Projects
+                                </a>
+                            </li>
 
-    <li>
-    <a class="dropdown-item" href="#">
-    <i class="fa-solid fa-city"></i>
-    New Projects
-    </a>
-    </li>
-    </ul>
-    </li>
+                        </ul>
+                    </li>
 
-    <!-- Agents -->
-    <li class="nav-item">
-    <a class="nav-link" href="#">Agents</a>
-    </li>
+                    <!-- Agents -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="agents.html">Agents</a>
+                    </li>
 
-   <!-- Favorites -->
-   <li class="nav-item">
-   <a class="nav-link" href="#">
-    Favorites
-    </a>
-    </li>
+                    <!-- Favorites -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="favorites.html">
+                            Favorites
+                        </a>
+                    </li>
 
-    <!-- Contact -->
-    <li class="nav-item">
-    <a class="nav-link" href="#">
-    Contact
-    </a>
-    </li>
-    </ul>
+                    <!-- Contact -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            Contact
+                        </a>
+                    </li>
 
-    <!-- Right Side -->
-    <div class="d-flex align-items-center gap-3">
+                </ul>
 
-    <!-- Search -->
-    <button class="icon-btn">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    </button>
+                <!-- Right Side -->
+                <div class="d-flex align-items-center gap-3">
 
-    <!-- Login -->
-    <a href="#" class="btn login-btn">
-    Login</a>
+                    <!-- Search -->
+                    <button class="icon-btn" type="button">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
 
-     <!-- Sell Property -->
-     <a href="#" class="btn sell-btn">
-     Sell Property</a>
+                    <!-- Login -->
+                    <a href="login.html" class="btn login-btn">
+                        Login
+                    </a>
 
-    </div>
+                    <!-- Sell Property -->
+                    <a href="sell-property.html" class="btn sell-btn">
+                        Sell Property
+                    </a>
 
-    </div>
+                </div>
 
-    </div>
+            </div>
+        </div>
 
     </nav>
+    <!-- Navbar End -->
 
-     <!-- Navbar End -->
-    </header>
- <!-- Header End -->   
+</header>
+<!-- Header End -->
 
 <!-- Agents Hero -->
 <section class="agents-hero">
