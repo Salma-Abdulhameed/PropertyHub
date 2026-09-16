@@ -1,0 +1,636 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: poppins,sans-serif;
+}
+
+body{
+background:#f5f9ff;
+}
+
+/* Navbr start */
+
+.custom-navbar{
+background:#fff;
+margin:18px auto;
+width:95%;
+border-radius:50px;
+padding:12px 18px;
+box-shadow:0 8px 30px rgba(0,0,0,.08);
+transition:.4s ease;
+}
+
+.custom-navbar.scrolled{
+padding:10px 18px;
+box-shadow:0 12px 35px rgba(0,0,0,.12);
+}
+
+.logo{
+font-size:28px;
+font-weight:700;
+color:#1E3A8A !important;
+}
+
+.logo i{
+color:#3B82F6;
+margin-right:8px;
+}
+
+.navbar-nav{
+gap:10px;
+}
+
+.nav-link{
+position:relative;
+color:#1f2937 !important;
+font-size:16px;
+font-weight:500;
+transition:.3s;
+padding:10px 18px !important;
+}
+
+.nav-link::after{
+content:"";
+position:absolute;
+left:18px;
+bottom:5px;
+width:0;
+height:2px;
+background:#2563eb;
+transition:.3s;
+}
+
+.nav-link:hover::after{
+width:60%;
+}
+
+.nav-link:hover{
+color:#2563eb !important;
+}
+
+.nav-link.active{
+color:#2563eb !important;
+}
+
+.custom-dropdown{
+border:none;
+border-radius:18px;
+padding:12px;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+min-width:240px;
+}
+
+.dropdown-item{
+border-radius:12px;
+padding:12px 16px;
+transition:.3s;
+}
+.dropdown-item i{
+color:#2563eb;
+margin-right:10px;
+}
+
+.dropdown-item:hover{
+background:#eff6ff;
+color:#2563eb;
+transform:translateX(6px);
+}
+
+.icon-btn{
+width:45px;
+height:45px;
+border:none;
+border-radius:50%;
+background:#eff6ff;
+color:#2563eb;
+transition:.3s;
+}
+
+.icon-btn:hover{
+background:#2563eb;
+color:#fff;
+transform:rotate(10deg);
+}
+
+.login-btn{
+border:2px solid #2563eb;
+color:#2563eb;
+border-radius:30px;
+padding:10px 24px;
+font-weight:600;
+transition:.3s;
+}
+
+.login-btn:hover{
+background:#2563eb;
+color:#fff;
+transform:translateY(-3px);
+}
+
+.sell-btn{
+background:#2563eb;
+color:#fff;
+padding:10px 24px;
+border-radius:30px;
+font-weight:600;
+transition:.3s;
+}
+
+.sell-btn:hover{
+background:#1E40AF;
+color:#fff;
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(37,99,235,.35);
+}
+
+.navbar-toggler{
+font-size:26px;
+color:#2563eb;
+}
+
+/* Navbr End */
+/* ==========================================
+   USER DASHBOARD
+   ========================================== */
+
+.user-dashboard {
+    background: #08152b;
+    min-height: 100vh;
+    padding: 120px 0 70px;
+}
+
+
+/* ==========================================
+   DASHBOARD HEADER
+   ========================================== */
+
+.dashboard-header {
+    margin-bottom: 35px;
+}
+
+.dashboard-label {
+    color: #60a5fa;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.dashboard-header h1 {
+    color: #ffffff;
+    font-size: 38px;
+    font-weight: 700;
+    margin: 8px 0;
+}
+
+.dashboard-header p {
+    color: #9fb0c8;
+    margin: 0;
+}
+
+
+/* ==========================================
+   STAT CARDS
+   ========================================== */
+
+.user-stat-card {
+    background: #122442;
+    border: 1px solid #263b5c;
+    border-radius: 18px;
+    padding: 25px;
+    color: #fff;
+    min-height: 175px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .25);
+    transition: .3s ease;
+}
+
+.user-stat-card:hover {
+    transform: translateY(-6px);
+    border-color: #3b82f6;
+    box-shadow: 0 18px 35px rgba(0, 0, 0, .35);
+}
+
+.stat-icon {
+    width: 50px;
+    height: 50px;
+    background: #1d4ed8;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+.stat-icon i {
+    color: #fff;
+    font-size: 20px;
+}
+
+.user-stat-card h3 {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.user-stat-card p {
+    color: #9fb0c8;
+    margin: 0;
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   DASHBOARD BOX
+   ========================================== */
+
+.dashboard-box {
+    background: #122442;
+    border: 1px solid #263b5c;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .25);
+}
+
+
+/* ==========================================
+   BOX HEADING
+   ========================================== */
+
+.box-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.box-heading h4 {
+    color: #ffffff;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.box-heading p {
+    color: #8fa3bf;
+    margin: 5px 0 0;
+    font-size: 13px;
+}
+
+.box-heading > i {
+    color: #60a5fa;
+    font-size: 22px;
+}
+
+
+/* ==========================================
+   ACTIVITY CHART
+   ========================================== */
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+.chart-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+
+/* ==========================================
+   PROFILE
+   ========================================== */
+
+.profile-box {
+    text-align: center;
+    height: 100%;
+}
+
+.profile-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    background: #1d4ed8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-icon i {
+    color: #ffffff;
+    font-size: 28px;
+}
+
+.profile-box h4 {
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.profile-email {
+    color: #8fa3bf;
+    font-size: 13px;
+}
+
+.profile-info {
+    border-top: 1px solid #263b5c;
+    border-bottom: 1px solid #263b5c;
+    margin: 20px 0;
+    padding: 15px 0;
+}
+
+.profile-info div {
+    display: flex;
+    justify-content: space-between;
+    margin: 9px 0;
+}
+
+.profile-info span {
+    color: #8fa3bf;
+}
+
+.profile-info strong {
+    color: #ffffff;
+}
+
+
+/* ==========================================
+   PROFILE BUTTON
+   ========================================== */
+
+.dashboard-btn {
+    width: 100%;
+    border: none;
+    background: #2563eb;
+    color: #ffffff;
+    padding: 11px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: .3s ease;
+}
+
+.dashboard-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================
+   FAVORITES SECTION
+   ========================================== */
+
+.favorites-box {
+    margin-top: 24px;
+}
+
+
+/* ==========================================
+   FAVORITE CARD
+   ========================================== */
+
+.favorite-card {
+    background: #0d1c35;
+    border: 1px solid #263b5c;
+    border-radius: 16px;
+    overflow: hidden;
+    height: 100%;
+    transition: .3s ease;
+}
+
+.favorite-card:hover {
+    transform: translateY(-5px);
+    border-color: #3b82f6;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, .3);
+}
+
+
+/* ==========================================
+   PROPERTY IMAGE
+   ========================================== */
+
+.property-image {
+    height: 190px;
+    position: relative;
+    overflow: hidden;
+}
+
+.property-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: .4s ease;
+}
+
+.favorite-card:hover .property-image img {
+    transform: scale(1.05);
+}
+
+.property-image span {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #2563eb;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+
+/* ==========================================
+   PROPERTY CONTENT
+   ========================================== */
+
+.property-content {
+    padding: 18px;
+}
+
+.property-content h5 {
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.property-content p {
+    color: #8fa3bf;
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
+.property-content p i {
+    color: #60a5fa;
+    margin-right: 5px;
+}
+
+
+/* ==========================================
+   PROPERTY BOTTOM
+   ========================================== */
+
+.property-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.property-bottom strong {
+    color: #60a5fa;
+    font-size: 14px;
+}
+
+.heart-active {
+    color: #ef4444;
+    font-size: 18px;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width: 991px) {
+
+    .user-dashboard {
+        padding: 110px 15px 60px;
+    }
+
+    .dashboard-header h1 {
+        font-size: 34px;
+    }
+
+    .profile-box {
+        height: auto;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .user-dashboard {
+        padding: 100px 15px 50px;
+    }
+
+    .dashboard-header {
+        margin-bottom: 25px;
+    }
+
+    .dashboard-header h1 {
+        font-size: 30px;
+    }
+
+    .dashboard-header p {
+        font-size: 14px;
+    }
+
+    .chart-container {
+        height: 260px;
+    }
+
+    .dashboard-box {
+        padding: 20px;
+    }
+
+    .property-image {
+        height: 200px;
+    }
+
+}
+
+
+@media (max-width: 576px) {
+
+    .dashboard-header h1 {
+        font-size: 26px;
+    }
+
+    .dashboard-label {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .user-stat-card {
+        min-height: auto;
+        padding: 20px;
+    }
+
+    .dashboard-box {
+        padding: 18px;
+        border-radius: 16px;
+    }
+
+    .box-heading h4 {
+        font-size: 18px;
+    }
+
+    .chart-container {
+        height: 230px;
+    }
+
+    .property-image {
+        height: 190px;
+    }
+
+}
+/* ==========================================
+   PREMIUM RESPONIVE FOOTER STYLES
+   ========================================== */
+.bg-dark-blue {
+  background-color: #051429 !important; /* Elegant ultra dark real estate theme color */
+}
+
+/* Base typography setup using Poppins */
+.main-footer {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.footer-heading {
+  font-size: 0.95rem !important;
+  letter-spacing: 0.5px;
+}
+
+/* Footer Link Configurations with transition delays */
+.footer-links li a {
+  color: rgba(255, 255, 255, 0.6) !important;
+  text-decoration: none !important;
+  font-size: 0.85rem !important;
+  font-weight: 400;
+  display: inline-block;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.footer-links li a:hover {
+  color: #0d6efd !important; /* Changes to pure brand blue on hover */
+  transform: translateX(4px); /* Moves nicely to the right */
+}
+
+
+
+
+/* Remove underline from Properties dropdown */
+.navbar .dropdown-toggle::after {
+    display: inline-block;
+    margin-left: .255em;
+    vertical-align: .255em;
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+    width: auto;
+    height: auto;
+    background: none;
+}
+
+.navbar .dropdown-toggle:focus::after,
+.navbar .dropdown-toggle:active::after {
+    width: auto !important;
+    background: none !important;
+}

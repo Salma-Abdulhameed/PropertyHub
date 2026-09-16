@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin-Dashboard</title>
+
+    <!-- Bootstrap link -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+ <!-- Custom CSS -->  
+<link rel="stylesheet" href="admin-dashboard.css">
+</head>
+<body>
+    
+<!-- Header Start -->
+<header>
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg custom-navbar fixed-top">
+
+        <div class="container">
+
+            <!-- Logo -->
+            <a class="navbar-brand logo" href="index.html">
+                <i class="fa-solid fa-house"></i>
+                PropertyHub
+            </a>
+
+            <!-- Mobile Toggle Button -->
+            <button class="navbar-toggler border-0 shadow-none"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu">
+
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <!-- Navbar Menu -->
+            <div class="collapse navbar-collapse" id="navbarMenu">
+
+                <!-- Left Side Menu -->
+                <ul class="navbar-nav mx-auto">
+
+                    <!-- Home -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+
+                    <!-- Properties Dropdown -->
+                    <li class="nav-item dropdown">
+
+                        <a class="nav-link dropdown-toggle"
+                            href="#"
+                            role="button"
+                            data-bs-toggle="dropdown">
+
+                            Properties
+                        </a>
+
+                        <ul class="dropdown-menu custom-dropdown">
+
+                            <li>
+                                <a class="dropdown-item" href="property-details.html">
+                                    <i class="fa-solid fa-building"></i>
+                                    Buy Properties
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item" href="property-details.html">
+                                    <i class="fa-solid fa-key"></i>
+                                    Rent Properties
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item" href="sell-property.html">
+                                    <i class="fa-solid fa-tag"></i>
+                                    Sell Property
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item" href="new-projects.html">
+                                    <i class="fa-solid fa-city"></i>
+                                    New Projects
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                    <!-- Agents -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="agents.html">Agents</a>
+                    </li>
+
+                    <!-- Favorites -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="favorites.html">
+                            Favorites
+                        </a>
+                    </li>
+
+                    <!-- Contact -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+                <!-- Right Side -->
+                <div class="d-flex align-items-center gap-3">
+
+                    <!-- Search -->
+                    <button class="icon-btn">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+
+                    <!-- Login -->
+                    <a href="login.html" class="btn login-btn">
+                        Login
+                    </a>
+
+                    <!-- Sell Property -->
+                    <a href="sell-property.html" class="btn sell-btn">
+                        Sell Property
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+
+    </nav>
+    <!-- Navbar End -->
+
+</header>
+<!-- Header End -->
+
+<!-- Admin Dashboard Start -->
+
+<section class="admin-dashboard">
+
+    <div class="container">
+
+        <!-- Dashboard Header -->
+        <div class="admin-header">
+
+            <div>
+                <span>PROPERTYHUB ADMIN</span>
+                <h1>Admin Dashboard</h1>
+                <p>Manage users, properties and platform activity.</p>
+            </div>
+
+            <button class="admin-action-btn">
+                <i class="fa-solid fa-plus"></i>
+                Add Property
+            </button>
+
+        </div>
+
+
+        <!-- Statistics Cards -->
+        <div class="row g-4 mb-4">
+
+            <!-- Users -->
+            <div class="col-lg-3 col-md-6">
+                <div class="admin-stat-card">
+
+                    <div class="admin-stat-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+
+                    <div>
+                        <span>Total Users</span>
+                        <h3>245</h3>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- Properties -->
+            <div class="col-lg-3 col-md-6">
+                <div class="admin-stat-card">
+
+                    <div class="admin-stat-icon">
+                        <i class="fa-solid fa-house"></i>
+                    </div>
+
+                    <div>
+                        <span>Properties</span>
+                        <h3>128</h3>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- Agents -->
+            <div class="col-lg-3 col-md-6">
+                <div class="admin-stat-card">
+
+                    <div class="admin-stat-icon">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+
+                    <div>
+                        <span>Total Agents</span>
+                        <h3>36</h3>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- Inquiries -->
+            <div class="col-lg-3 col-md-6">
+                <div class="admin-stat-card">
+
+                    <div class="admin-stat-icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+
+                    <div>
+                        <span>Inquiries</span>
+                        <h3>84</h3>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Charts Row -->
+        <div class="row g-4 mb-4">
+
+            <!-- Property Listings -->
+            <div class="col-lg-8">
+
+                <div class="admin-box">
+
+                    <div class="admin-box-heading">
+
+                        <div>
+                            <h4>Property Listings</h4>
+                            <p>Monthly property listing activity</p>
+                        </div>
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                    </div>
+
+                    <div class="admin-chart-container">
+                        <canvas id="propertyChart"></canvas>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- User Overview -->
+            <div class="col-lg-4">
+
+                <div class="admin-box">
+
+                    <div class="admin-box-heading">
+
+                        <div>
+                            <h4>User Overview</h4>
+                            <p>Users by role</p>
+                        </div>
+
+                        <i class="fa-solid fa-chart-pie"></i>
+
+                    </div>
+
+                    <div class="admin-chart-container">
+                        <canvas id="userOverviewChart"></canvas>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Recent Users -->
+        <div class="admin-box">
+
+            <div class="admin-box-heading">
+
+                <div>
+                    <h4>Recent Users</h4>
+                    <p>Recently registered users</p>
+                </div>
+
+                <button class="view-all-btn">
+                    View All
+                </button>
+
+            </div>
+
+
+            <!-- Users Table -->
+            <div class="table-responsive">
+
+                <table class="table admin-table align-middle">
+
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>
+                                <i class="fa-solid fa-circle-user user-table-icon"></i>
+                                Ali Khan
+                            </td>
+
+                            <td>ali@gmail.com</td>
+
+                            <td>
+                                <span class="role-badge">
+                                    User
+                                </span>
+                            </td>
+
+                            <td>
+                                <span class="status-active">
+                                    Active
+                                </span>
+                            </td>
+
+                            <td>
+                                <button class="table-btn">
+                                    View
+                                </button>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <i class="fa-solid fa-circle-user user-table-icon"></i>
+                                Sara Ahmed
+                            </td>
+
+                            <td>sara@gmail.com</td>
+
+                            <td>
+                                <span class="role-badge">
+                                    User
+                                </span>
+                            </td>
+
+                            <td>
+                                <span class="status-active">
+                                    Active
+                                </span>
+                            </td>
+
+                            <td>
+                                <button class="table-btn">
+                                    View
+                                </button>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <i class="fa-solid fa-circle-user user-table-icon"></i>
+                                Hamza Ali
+                            </td>
+
+                            <td>hamza@gmail.com</td>
+
+                            <td>
+                                <span class="role-badge">
+                                    Agent
+                                </span>
+                            </td>
+
+                            <td>
+                                <span class="status-blocked">
+                                    Blocked
+                                </span>
+                            </td>
+
+                            <td>
+                                <button class="table-btn">
+                                    View
+                                </button>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Admin Dashboard End -->
+
+<!-- Footer Start -->
+
+<footer class="main-footer bg-dark-blue text-white pt-5 pb-3 position-relative">
+
+    <div class="container">
+
+        <!-- Footer Top -->
+        <div class="row g-4 pb-5 footer-top-border">
+
+            <!-- Brand -->
+            <div class="col-lg-3 col-md-6">
+
+                <div class="footer-brand d-flex align-items-center gap-2 mb-3">
+
+                    <i class="bi bi-house-door-fill text-primary fs-3"></i>
+
+                    <span class="fs-4 fw-bold text-white tracking-tight">
+                        Property<span class="text-primary">Hub</span>
+                    </span>
+
+                </div>
+
+                <p class="text-white-50 small pe-lg-3 lh-base mb-4">
+                    PropertyHub helps you find, buy, rent or sell properties
+                    with ease. We connect you to the best places to call home.
+                </p>
+
+                <!-- Social Icons -->
+                <div class="footer-socials d-flex gap-2">
+
+                    <a href="#" class="social-icon-btn">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+
+                    <a href="#" class="social-icon-btn">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+
+                    <a href="#" class="social-icon-btn">
+                        <i class="bi bi-twitter-x"></i>
+                    </a>
+
+                    <a href="#" class="social-icon-btn">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+
+                    <a href="#" class="social-icon-btn">
+                        <i class="bi bi-youtube"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Quick Links -->
+            <div class="col-lg-2 col-md-6 col-6 ps-lg-4">
+
+                <h5 class="footer-heading fw-bold text-white mb-3">
+                    Quick Links
+                </h5>
+
+                <ul class="list-unstyled footer-links d-flex flex-column gap-2">
+
+                    <li>
+                        <a href="./index.html">
+                            <i class="bi bi-chevron-right small me-1"></i>
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="bi bi-chevron-right small me-1"></i>
+                            Buy Properties
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="bi bi-chevron-right small me-1"></i>
+                            Rent Properties
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="bi bi-chevron-right small me-1"></i>
+                            Sell Property
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="bi bi-chevron-right small me-1"></i>
+                            Agents
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="./favorites.html">
+                            <i class="bi bi-chevron-right small me-1"></i>
+                            Favorites
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="./contact.html">
+                            <i class="bi bi-chevron-right small me-1"></i>
+                            Contact Us
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Popular Cities -->
+            <div class="col-lg-2 col-md-6 col-6">
+
+                <h5 class="footer-heading fw-bold text-white mb-3">
+                    Popular Cities
+                </h5>
+
+                <ul class="list-unstyled footer-links d-flex flex-column gap-2">
+
+                    <li>
+                        <a href="#">
+                            <i class="bi bi-geo-alt small me-1"></i>
+                            Karachi
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="bi bi-geo-alt small me-1"></i>
+                            Lahore
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="bi bi-geo-alt small me-1"></i>
+                            Islamabad
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="bi bi-geo-alt small me-1"></i>
+                            Rawalpindi
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="bi bi-geo-alt small me-1"></i>
+                            Faisalabad
+                        </a>
+                    </li>
+
+                    <li class="mt-2">
+
+                        <a href="#" class="text-primary fw-semibold view-all-cities-btn">
+                            View All Cities
+                            <i class="bi bi-arrow-right ms-1"></i>
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Resources -->
+            <div class="col-lg-2 col-md-6 col-6">
+
+                <h5 class="footer-heading fw-bold text-white mb-3">
+                    Resources
+                </h5>
+
+                <ul class="list-unstyled footer-links d-flex flex-column gap-2">
+
+                    <li>
+                        <a href="#">
+                            <i class="bi bi-chevron-right small me-1"></i>
+                            About Us
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="bi bi-chevron-right small me-1"></i>
+                            Blog
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="bi bi-chevron-right small me-1"></i>
+                            Help Center
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="bi bi-chevron-right small me-1"></i>
+                            Terms & Conditions
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="bi bi-chevron-right small me-1"></i>
+                            Privacy Policy
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="bi bi-chevron-right small me-1"></i>
+                            FAQs
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Newsletter -->
+            <div class="col-lg-3 col-md-6 col-12">
+
+                <h5 class="footer-heading fw-bold text-white mb-3">
+                    Subscribe to Our Newsletter
+                </h5>
+
+                <p class="text-white-50 small mb-3">
+                    Get the latest property updates and offers directly
+                    in your inbox.
+                </p>
+
+                <form class="footer-mini-newsletter d-flex rounded-3 overflow-hidden border border-secondary mb-3">
+
+                    <input
+                        type="email"
+                        class="form-control bg-transparent border-0 text-white ps-3 small"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                    <button type="submit" class="btn btn-primary px-3 rounded-0">
+                        <i class="bi bi-send-fill"></i>
+                    </button>
+
+                </form>
+
+                <span class="text-white-50 x-small d-flex align-items-center gap-1">
+
+                    <i class="bi bi-lock-fill"></i>
+                    We respect your privacy.
+
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Footer Bottom -->
+        <div class="row pt-4 align-items-center border-top border-secondary-subtle g-3">
+
+            <!-- Contact Info -->
+            <div class="col-lg-9 col-md-12">
+
+                <div class="d-flex flex-wrap gap-4 justify-content-center justify-content-lg-start text-white-50 small">
+
+                    <div class="d-flex align-items-center gap-2 footer-meta-item">
+
+                        <i class="bi bi-telephone-fill text-primary"></i>
+
+                        <span>+92 300 1234567</span>
+
+                    </div>
+
+
+                    <div class="d-flex align-items-center gap-2 footer-meta-item">
+
+                        <i class="bi bi-envelope-fill text-primary"></i>
+
+                        <span>info@propertyhub.com</span>
+
+                    </div>
+
+
+                    <div class="d-flex align-items-center gap-2 footer-meta-item">
+
+                        <i class="bi bi-geo-alt-fill text-primary"></i>
+
+                        <span>
+                            123 Main Boulevard, DHA Lahore, Pakistan
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Copyright + Back To Top -->
+            <div class="col-lg-3 col-md-12 d-flex align-items-center justify-content-center justify-content-lg-end gap-3 text-center">
+
+                <p class="mb-0 text-white-50 small">
+                    &copy; 2026 PropertyHub. All Rights Reserved.
+                </p>
+
+                <button
+                    id="backToTopBtn"
+                    class="back-to-top-btn d-flex align-items-center justify-content-center"
+                    title="Go to top"
+                >
+
+                    <i class="bi bi-arrow-up"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<!-- Footer End -->
+
+
+
+
+
+
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Admin Dashboard JS -->
+<script src="admin-dashbaord.js"></script>   
+</body>
+</html>
