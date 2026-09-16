@@ -28,7 +28,64 @@ document.addEventListener('DOMContentLoaded', () => {
   renderFavGrid();
 });
 
-// Render Buy Page
+
+////////////////////////////////////
+
+///// Nvbar Strat ////
+const navbar = document.querySelector(".custom-navbar");
+window.addEventListener("scroll", function () {
+if (window.scrollY > 50) {
+navbar.classList.add("scrolled");
+}
+else {
+navbar.classList.remove("scrolled");
+}
+});
+
+
+const navLinks = document.querySelectorAll(".nav-link");
+navLinks.forEach(link => {
+link.addEventListener("click", function () {
+navLinks.forEach(item => {
+item.classList.remove("active");
+});
+this.classList.add("active");
+});
+});
+
+const searchBtn = document.querySelector(".icon-btn");
+searchBtn.addEventListener("click", function () {
+alert("Search Feature Coming Soon 🔍");
+});
+
+
+const sellBtn = document.querySelector(".sell-btn");
+sellBtn.addEventListener("mouseenter", function () {
+sellBtn.style.transform = "scale(1.05)";
+});
+sellBtn.addEventListener("mouseleave", function () {
+sellBtn.style.transform = "scale(1)";
+});
+
+
+const dropdown = document.querySelector(".dropdown");
+if (window.innerWidth > 992) {
+dropdown.addEventListener("mouseenter", function () {
+bootstrap.Dropdown.getOrCreateInstance(
+dropdown.querySelector(".dropdown-toggle")
+).show();
+});
+dropdown.addEventListener("mouseleave", function () {
+bootstrap.Dropdown.getOrCreateInstance(
+dropdown.querySelector(".dropdown-toggle")
+).hide();
+});
+}
+// //// Navbar End /////
+
+
+
+////////////////////////// Render Buy Page /////////////////////////////////
 function renderBuyGrid() {
   const buyGrid = document.getElementById('buyGrid');
   if (!buyGrid) return;
@@ -55,7 +112,7 @@ function renderBuyGrid() {
   buyGrid.innerHTML = html;
 }
 
-// Render Rent Page
+////////////////////////////////// Render Rent Page //////////////////////////////
 function renderRentGrid() {
   const rentGrid = document.getElementById('rentGrid');
   if (!rentGrid) return;
@@ -82,7 +139,7 @@ function renderRentGrid() {
   rentGrid.innerHTML = html;
 }
 
-// Render Favorites Page
+///////////////////////////////////// Render Favorites Page //////////////////////////////////====
 function renderFavGrid() {
   const favGrid = document.getElementById('favGrid');
   if (!favGrid) return;
@@ -140,3 +197,73 @@ function changeImage(src, thumb) {
   document.querySelectorAll('.thumb-img').forEach(img => img.classList.remove('active'));
   if (thumb) thumb.classList.add('active');
 }
+
+
+
+// ==========================================
+// FLYING PLANE NEWSLETTER SYSTEM
+// ==========================================
+(function() {
+  const form = document.getElementById("creativeNewsletterForm");
+  const planeIcon = document.getElementById("planeIcon");
+  
+  if (form && planeIcon) {
+    form.addEventListener("submit", function(e) {
+      e.preventDefault(); // Default Page refresh rokhne ke liye
+      
+      const emailField = document.getElementById("newsletterEmailField");
+      const submitBtn = form.querySelector(".subscribe-action-btn");
+      const btnText = submitBtn.querySelector(".btn-text");
+      const spinner = submitBtn.querySelector(".spinner-border");
+      
+      if (emailField.value.trim() !== "") {
+        // Step 1: Trigger paper plane flying animation
+        planeIcon.classList.add("fly-away");
+        
+        // Step 2: Button loading state change
+        btnText.style.opacity = "0.5";
+        spinner.classList.remove("d-none");
+        submitBtn.disabled = true;
+        
+        // Step 3: Animation complete hone par success confirm display karna (1 sec delay)
+        setTimeout(() => {
+          spinner.classList.add("d-none");
+          btnText.style.opacity = "1";
+          btnText.innerHTML = '<i class="bi bi-shield-fill-check"></i> Subscribed!';
+          submitBtn.style.background.setProperty("background", "#2ec4b6", "important"); // Neon Success Green color
+          submitBtn.style.boxShadow = "0 8px 20px rgba(46, 196, 182, 0.35)";
+          
+          // Form resets after 3 seconds
+          setTimeout(() => {
+            planeIcon.classList.remove("fly-away");
+            btnText.innerHTML = "Subscribe";
+            submitBtn.style.background = "#0d6efd !important";
+            submitBtn.style.boxShadow = "";
+            submitBtn.disabled = false;
+            emailField.value = "";
+          }, 3000);
+          
+        }, 1100);
+      }
+    });
+  }
+})();
+
+
+// ==========================================
+// FOOTER BACK TO TOP SMOOTH SCROLL SYSTEM
+// ==========================================
+(function() {
+  const backToTopBtn = document.getElementById("backToTopBtn");
+  
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener("click", function() {
+      // Safely triggers modern smooth page scrolling up to index zero layout position
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  }
+})();
+

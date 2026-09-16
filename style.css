@@ -1,42 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ==========================================
+   GLOBAL RESET & LAYOUT SETUP
+   ========================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
 :root {
   --primary-color: #2563eb;
-  --dark-blue: #0f172a;
+  --dark-blue: #0f172a;  
 }
 
 body { 
   background: #f1f5f9; 
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  /* Top fixed header offset to prevent overlap */
+  padding-top: 100px; 
 }
 
-.custom-navbar { 
-  background: rgba(255, 255, 255, 0.95); 
-  backdrop-filter: blur(10px);
-  margin: 15px auto; 
-  width: 95%; 
-  border-radius: 50px; 
-  padding: 12px 25px; 
-  box-shadow: 0 10px 30px rgba(0,0,0,0.06); 
+/* ==========================================
+   FIXED NAVBAR & HEADER CONTAINER
+   ========================================== */
+header, .navbar-wrapper {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  z-index: 10000 !important;
+  background-color: #f1f5f9;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
 }
 
-.logo { font-size: 24px; font-weight: 800; color: var(--dark-blue) !important; }
+.custom-navbar {
+  background: #ffffff !important;
+  margin: 0 auto 10px auto !important;
+  width: 95%;
+  max-width: 1300px;
+  border-radius: 50px;
+  padding: 10px 24px !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08) !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+}
+
+.logo { 
+  font-size: 24px; 
+  font-weight: 800; 
+  color: #1E3A8A !important; 
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.logo i {
+  color: #3B82F6;
+  margin-right: 8px;
+}
+
+.navbar-nav {
+  gap: 10px;
+}
+
+.nav-link {
+  position: relative;
+  color: #1f2937 !important;
+  font-size: 15px;
+  font-weight: 500;
+  transition: .3s;
+  padding: 8px 16px !important;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 16px;
+  bottom: 2px;
+  width: 0;
+  height: 2px;
+  background: #2563eb;
+  transition: .3s;
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+  width: 60%;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: #2563eb !important;
+}
+
+/* ==========================================
+   PAGE TAB SWITCHER BAR (SCROLLABLE ON MOBILE)
+   ========================================== */
+.tab-switcher-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0 15px;
+}
 
 .tab-switcher-container {
-  background: #fff;
+  background: #ffffff;
   border-radius: 50px;
-  padding: 6px;
+  padding: 5px;
   display: inline-flex;
   border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+/* Hide scrollbars for ultra clean view */
+.tab-switcher-container::-webkit-scrollbar {
+  display: none;
 }
 
 .page-tab-btn { 
   border-radius: 30px !important; 
   font-weight: 600; 
-  padding: 10px 24px; 
+  padding: 8px 22px; 
   transition: all 0.3s ease; 
   text-decoration: none;
+  color: #475569;
+  font-size: 14px;
+  display: inline-block;
 }
 
 .page-tab-btn.active {
@@ -44,6 +142,61 @@ body {
   color: #fff !important;
 }
 
+/* ==========================================
+   BUTTONS & ACTION ELEMENTS
+   ========================================== */
+.login-btn {
+  border: 2px solid #2563eb;
+  color: #2563eb;
+  border-radius: 30px;
+  padding: 8px 22px;
+  font-weight: 600;
+  transition: .3s;
+  text-decoration: none;
+}
+
+.login-btn:hover {
+  background: #2563eb;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.sell-btn {
+  background: #2563eb;
+  color: #fff;
+  padding: 8px 22px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: .3s;
+  text-decoration: none;
+}
+
+.sell-btn:hover {
+  background: #1E40AF;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+.icon-btn {
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: #eff6ff;
+  color: #2563eb;
+  transition: .3s;
+}
+
+.icon-btn:hover {
+  background: #2563eb;
+  color: #fff;
+  transform: rotate(10deg);
+}
+
+/* ==========================================
+   PROPERTY CARDS & GRID LAYOUT
+   ========================================== */
 .property-card {
   border: none;
   border-radius: 24px;
@@ -51,12 +204,24 @@ body {
   background: #fff;
   transition: all 0.4s ease;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+  height: 100%;
 }
 
-.property-card:hover { transform: translateY(-10px); }
+.property-card:hover { 
+  transform: translateY(-8px); 
+}
 
-.img-wrapper { position: relative; overflow: hidden; height: 240px; }
-.img-wrapper img { height: 100%; width: 100%; object-fit: cover; }
+.img-wrapper { 
+  position: relative; 
+  overflow: hidden; 
+  height: 240px; 
+}
+
+.img-wrapper img { 
+  height: 100%; 
+  width: 100%; 
+  object-fit: cover; 
+}
 
 .fav-btn {
   position: absolute;
@@ -74,7 +239,6 @@ body {
 }
 
 .fav-btn.active { color: #e63946; }
-
 .price-tag { font-size: 1.35rem; font-weight: 700; color: var(--primary-color); }
 
 .badge-type { 
@@ -102,21 +266,237 @@ body {
 .thumb-img { height: 100px; object-fit: cover; border-radius: 14px; cursor: pointer; opacity: 0.6; }
 .thumb-img.active { opacity: 1; border: 3px solid var(--primary-color); }
 
-/* Footer Styles */
-footer { background: var(--dark-blue) !important; color: #94a3b8; margin-top: auto; }
-footer a { transition: color 0.2s ease-in-out; }
-footer a:hover { color: #3b82f6 !important; }
+/* ==========================================
+   NEWSLETTER SECTION
+   ========================================== */
+.newsletter-section {
+  margin-top: 40px !important;
+  padding-top: 5px !important;
+}
 
-/* Social Icons Hover Effect */
-footer .btn-outline-secondary {
-  color: #94a3b8;
-  border-color: #334155;
+.newsletter-wrapper {
+  background: #0c2553 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 15px 35px rgba(12, 37, 83, 0.18) !important;
+  padding: 2.5rem 2rem !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.ambient-glow {
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(13, 110, 253, 0.25) 0%, rgba(12, 37, 83, 0) 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.newsletter-icon-container {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#planeIcon {
+  display: inline-block;
+  transition: transform 0.6s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+.newsletter-wrapper:hover .newsletter-icon-container {
+  background: #0d6efd;
+  box-shadow: 0 0 15px rgba(13, 110, 253, 0.5);
+}
+
+.newsletter-wrapper:hover #planeIcon {
+  transform: translateY(-2px) rotate(15deg);
+}
+
+.newsletter-form-container {
+  max-width: 520px;
+}
+
+.input-field-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  left: 15px;
+  color: rgba(12, 37, 83, 0.4);
+  font-size: 1.1rem;
+  z-index: 5;
+  transition: color 0.3s ease;
+}
+
+.newsletter-input {
+  background: #ffffff !important;
+  color: #0c2553 !important;
+  border: 2px solid transparent !important;
+  border-radius: 12px !important;
+  padding: 12px 15px 12px 45px !important;
+  font-size: 0.92rem !important;
+  height: 50px;
+  transition: all 0.3s ease !important;
+}
+
+.newsletter-input:focus {
+  border-color: #0d6efd !important;
+  box-shadow: 0 0 15px rgba(13, 110, 253, 0.15) !important;
+}
+
+.newsletter-input:focus + .input-icon {
+  color: #0d6efd;
+}
+
+.subscribe-action-btn {
+  background: #0d6efd !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 12px !important;
+  padding: 0 28px !important;
+  height: 50px;
+  font-size: 0.95rem;
+  transition: all 0.4s ease !important;
+  white-space: nowrap;
+}
+
+.subscribe-action-btn:hover {
+  background: #0b5ed7 !important;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(13, 110, 253, 0.35) !important;
+}
+
+/* ==========================================
+   FOOTER STYLES
+   ========================================== */
+.bg-dark-blue {
+  background-color: #051429 !important;
+}
+
+.main-footer {
+  font-family: 'Poppins', sans-serif !important;
+  margin-top: auto;
+}
+
+.footer-heading {
+  font-size: 0.95rem !important;
+  letter-spacing: 0.5px;
+}
+
+.footer-links li a {
+  color: rgba(255, 255, 255, 0.6) !important;
+  text-decoration: none !important;
+  font-size: 0.85rem !important;
+  font-weight: 400;
+  display: inline-block;
   transition: all 0.3s ease;
 }
 
-footer .btn-outline-secondary:hover {
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
-  color: #fff !important;
-  transform: translateY(-3px);
+.footer-links li a:hover {
+  color: #0d6efd !important;
+  transform: translateX(4px);
+}
+
+.social-icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.7) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  text-decoration: none !important;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.4s ease;
+}
+
+.social-icon-btn:hover {
+  background: #0d6efd;
+  color: #ffffff !important;
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 5px 15px rgba(13, 110, 253, 0.4);
+}
+
+/* ==========================================
+   RESPONSIVE MEDIA QUERIES (FULL COVERAGE)
+   ========================================== */
+
+/* Tablet & Smaller Laptops */
+@media (max-width: 991.98px) {
+  body {
+    padding-top: 135px;
+  }
+
+  .custom-navbar {
+    width: 96%;
+    padding: 8px 18px !important;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .main-img {
+    height: 320px;
+  }
+
+  .footer-meta-item {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 4px;
+  }
+}
+
+/* Mobile Screens */
+@media (max-width: 767.98px) {
+  body {
+    padding-top: 125px; /* Compact top spacing */
+  }
+
+  .custom-navbar {
+    border-radius: 30px;
+    padding: 8px 14px !important;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .page-tab-btn {
+    padding: 6px 16px;
+    font-size: 12px;
+  }
+
+  .login-btn, .sell-btn {
+    padding: 6px 14px;
+    font-size: 13px;
+  }
+
+  .newsletter-wrapper {
+    padding: 1.75rem 1.25rem !important;
+  }
+
+  .newsletter-input {
+    height: 45px;
+    font-size: 0.85rem !important;
+  }
+
+  .subscribe-action-btn {
+    height: 45px;
+    padding: 0 18px !important;
+    font-size: 0.88rem;
+  }
 }
