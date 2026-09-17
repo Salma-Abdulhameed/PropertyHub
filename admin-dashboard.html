@@ -598,74 +598,7 @@
                         </tr>
                     </thead>
 
-                    <tbody>
-
-                        <tr>
-                            <td>
-                                <i class="fa-solid fa-circle-user user-table-icon"></i>
-                                Ali Khan
-                            </td>
-
-                            <td>ali@gmail.com</td>
-
-                            <td>
-                                <span class="role-badge">User</span>
-                            </td>
-
-                            <td>
-                                <span class="status-active">Active</span>
-                            </td>
-
-                            <td>
-                                <button class="table-btn">View</button>
-                            </td>
-                        </tr>
-
-
-                        <tr>
-                            <td>
-                                <i class="fa-solid fa-circle-user user-table-icon"></i>
-                                Sara Ahmed
-                            </td>
-
-                            <td>sara@gmail.com</td>
-
-                            <td>
-                                <span class="role-badge">User</span>
-                            </td>
-
-                            <td>
-                                <span class="status-active">Active</span>
-                            </td>
-
-                            <td>
-                                <button class="table-btn">View</button>
-                            </td>
-                        </tr>
-
-
-                        <tr>
-                            <td>
-                                <i class="fa-solid fa-circle-user user-table-icon"></i>
-                                Hamza Ali
-                            </td>
-
-                            <td>hamza@gmail.com</td>
-
-                            <td>
-                                <span class="role-badge">Agent</span>
-                            </td>
-
-                            <td>
-                                <span class="status-blocked">Blocked</span>
-                            </td>
-
-                            <td>
-                                <button class="table-btn">View</button>
-                            </td>
-                        </tr>
-
-                    </tbody>
+                    <tbody id="userTableBody"></tbody>
 
                 </table>
 
@@ -675,18 +608,16 @@
             <!-- Pagination -->
             <div class="pagination-box">
 
-                <span>Showing 1–3 of 245 users</span>
+                <span id="userPaginationInfo">Showing 0 users</span>
 
-                <div>
-                    <button class="page-btn">
+                <div id="userPagination">
+                    <button class="page-btn" id="userPrevBtn">
                         <i class="fa-solid fa-chevron-left"></i>
                     </button>
 
-                    <button class="page-btn active">1</button>
-                    <button class="page-btn">2</button>
-                    <button class="page-btn">3</button>
+                    <button class="page-btn active" id="userPageBtn">1</button>
 
-                    <button class="page-btn">
+                    <button class="page-btn" id="userNextBtn">
                         <i class="fa-solid fa-chevron-right"></i>
                     </button>
                 </div>
@@ -730,7 +661,6 @@
 </section>
 
 <!-- Admin Dashboard End -->
-
 
 
             <!-- UNIQUE ULTRA-PREMIUM NEWSLETTER SECTION -->
@@ -888,11 +818,6 @@
   </div>
 </footer>
 
-
-
-
-
-
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
@@ -903,6 +828,6 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <!-- Admin Dashboard JS -->
-<script src="admin-dashbaord.js"></script>   
+<script type="module" src="admin-dashbaord.js"></script>   
 </body>
 </html>

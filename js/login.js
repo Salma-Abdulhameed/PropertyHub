@@ -1,45 +1,47 @@
-// ===================================================
-// PROPERTYHUB - LOGIN INTERACTION & PASSWORD TOGGLE
-// ===================================================
-document.addEventListener("DOMContentLoaded", function () {
-  
-  // Elements Selection
-  const togglePasswordBtn = document.getElementById("togglePasswordBtn");
-  const passwordInput = document.getElementById("userPassword");
-  const eyeIcon = document.getElementById("eyeIcon");
-  const loginForm = document.getElementById("propertyHubLoginForm");
+import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 
-  // 1. Password Visibility Toggle Logic
-  if (togglePasswordBtn && passwordInput && eyeIcon) {
-    togglePasswordBtn.addEventListener("click", function () {
-      // Current type fetch karein
-      const currentType = passwordInput.getAttribute("type");
-      
-      if (currentType === "password") {
-        // Change to text input to show password
-        passwordInput.setAttribute("type", "text");
-        eyeIcon.classList.remove("bi-eye");
-        eyeIcon.classList.add("bi-eye-slash");
-      } else {
-        // Change back to password input to hide it
-        passwordInput.setAttribute("type", "password");
-        eyeIcon.classList.remove("bi-eye-slash");
-        eyeIcon.classList.add("bi-eye");
-      }
-    });
-  }
+import { doc, getDoc } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
 
-  // 2. Form Submission Handling (Prevents empty or faulty reloads)
-  if (loginForm) {
-    loginForm.addEventListener("submit", function (e) {
-      // Filter any custom validation rules here if needed in future
-      const emailField = document.getElementById("userEmail");
-      
-      if (emailField && emailField.value.trim() === "") {
-        e.preventDefault();
-        alert("Please enter a valid email address.");
-      }
-    });
-  }
+import { auth, db } from "../firebase.js";
 
+const loginForm = document.getElementById("propertyHubLoginForm");
+
+loginForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById("userEmail").value;
+    const password = document.getElementById("userPassword").value;
+
+    try {
+        const userCredential = await signInWithEmailAndPassword(
+            auth,
+            email,
+            password
+        );
+
+        const uid = userCredential.user.uid;
+
+        const userDoc = await getDoc(doc(db, "users", uid));
+
+        if (!userDoc.exists()) {
+            alert("User data not found.");
+            return;
+        }
+
+        const userData = userDoc.data();
+
+        if (userData.status === "blocked") {
+            alert("Your account is blocked.");
+            return;
+        }
+
+        if (userData.role === "admin") {
+            window.location.href = "admin-dashboard.html";
+        } else {
+            window.location.href = "user-dashboard.html";
+        }
+
+    } catch (error) {
+        alert("Invalid email or password.");
+    }
 });

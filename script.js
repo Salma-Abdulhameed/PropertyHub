@@ -22,6 +22,11 @@ const rentImages = [
   'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=600'
 ];
 
+
+// ==========================================
+// PAGE LOAD
+// ==========================================
+
 document.addEventListener('DOMContentLoaded', () => {
   renderBuyGrid();
   renderRentGrid();
@@ -29,226 +34,520 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-////////////////////////////////////
+// ==========================================
+// NAVBAR
+// ==========================================
 
-///// Nvbar Strat ////
 const navbar = document.querySelector(".custom-navbar");
-window.addEventListener("scroll", function () {
-if (window.scrollY > 50) {
-navbar.classList.add("scrolled");
-}
-else {
-navbar.classList.remove("scrolled");
-}
-});
 
+if (navbar) {
+  window.addEventListener("scroll", function () {
+
+    if (window.scrollY > 50) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+
+  });
+}
+
+
+// Navbar Links
 
 const navLinks = document.querySelectorAll(".nav-link");
+
 navLinks.forEach(link => {
-link.addEventListener("click", function () {
-navLinks.forEach(item => {
-item.classList.remove("active");
+
+  link.addEventListener("click", function () {
+
+    navLinks.forEach(item => {
+      item.classList.remove("active");
+    });
+
+    this.classList.add("active");
+
+  });
+
 });
-this.classList.add("active");
-});
-});
+
+
+// Search Button
 
 const searchBtn = document.querySelector(".icon-btn");
-searchBtn.addEventListener("click", function () {
-alert("Search Feature Coming Soon 🔍");
-});
 
+if (searchBtn) {
+
+  searchBtn.addEventListener("click", function () {
+    alert("Search Feature Coming Soon 🔍");
+  });
+
+}
+
+
+// Sell Button
 
 const sellBtn = document.querySelector(".sell-btn");
-sellBtn.addEventListener("mouseenter", function () {
-sellBtn.style.transform = "scale(1.05)";
-});
-sellBtn.addEventListener("mouseleave", function () {
-sellBtn.style.transform = "scale(1)";
-});
 
+if (sellBtn) {
+
+  sellBtn.addEventListener("mouseenter", function () {
+    sellBtn.style.transform = "scale(1.05)";
+  });
+
+  sellBtn.addEventListener("mouseleave", function () {
+    sellBtn.style.transform = "scale(1)";
+  });
+
+}
+
+
+// Properties Dropdown
 
 const dropdown = document.querySelector(".dropdown");
-if (window.innerWidth > 992) {
-dropdown.addEventListener("mouseenter", function () {
-bootstrap.Dropdown.getOrCreateInstance(
-dropdown.querySelector(".dropdown-toggle")
-).show();
-});
-dropdown.addEventListener("mouseleave", function () {
-bootstrap.Dropdown.getOrCreateInstance(
-dropdown.querySelector(".dropdown-toggle")
-).hide();
-});
+
+if (dropdown && window.innerWidth > 992) {
+
+  const dropdownToggle = dropdown.querySelector(".dropdown-toggle");
+
+  if (dropdownToggle && typeof bootstrap !== "undefined") {
+
+    dropdown.addEventListener("mouseenter", function () {
+
+      bootstrap.Dropdown
+        .getOrCreateInstance(dropdownToggle)
+        .show();
+
+    });
+
+    dropdown.addEventListener("mouseleave", function () {
+
+      bootstrap.Dropdown
+        .getOrCreateInstance(dropdownToggle)
+        .hide();
+
+    });
+
+  }
+
 }
-// //// Navbar End /////
 
 
+// ==========================================
+// BUY PAGE
+// ==========================================
 
-////////////////////////// Render Buy Page /////////////////////////////////
 function renderBuyGrid() {
+
   const buyGrid = document.getElementById('buyGrid');
+
   if (!buyGrid) return;
 
   let html = '';
+
   for (let i = 0; i < 9; i++) {
+
     html += `
-    <div class="col-md-4">
-      <div class="card property-card h-100">
-        <div class="img-wrapper">
-          <span class="badge-type">For Sale</span>
-          <img src="${buyImages[i]}" alt="Property">
-          <button class="fav-btn active" onclick="toggleFav(this)"><i class="fa-solid fa-heart"></i></button>
+      <div class="col-md-4">
+
+        <div class="card property-card h-100">
+
+          <div class="img-wrapper">
+
+            <span class="badge-type">
+              For Sale
+            </span>
+
+            <img src="${buyImages[i]}" alt="Property">
+
+            <button 
+              class="fav-btn active" 
+              onclick="toggleFav(this)"
+            >
+              <i class="fa-solid fa-heart"></i>
+            </button>
+
+          </div>
+
+          <div class="card-body p-4">
+
+            <div class="price-tag mb-1">
+              PKR ${(1.8 + i * 0.4).toFixed(1)} Crore
+            </div>
+
+            <h5 class="card-title text-dark fw-bold">
+              Luxury Villa - Unit ${i + 1}
+            </h5>
+
+            <p class="text-muted small mb-2">
+              <i class="fa-solid fa-location-dot text-danger me-1"></i>
+              DHA Lahore
+            </p>
+
+            <a 
+              href="property-detail.html" 
+              class="btn btn-outline-primary w-100 rounded-pill mt-2 fw-semibold"
+            >
+              View Details
+            </a>
+
+          </div>
+
         </div>
-        <div class="card-body p-4">
-          <div class="price-tag mb-1">PKR ${(1.8 + i*0.4).toFixed(1)} Crore</div>
-          <h5 class="card-title text-dark fw-bold">Luxury Villa - Unit ${i+1}</h5>
-          <p class="text-muted small mb-2"><i class="fa-solid fa-location-dot text-danger me-1"></i> DHA Lahore</p>
-          <a href="property-detail.html" class="btn btn-outline-primary w-100 rounded-pill mt-2 fw-semibold">View Details</a>
-        </div>
+
       </div>
-    </div>`;
+    `;
   }
+
   buyGrid.innerHTML = html;
 }
 
-////////////////////////////////// Render Rent Page //////////////////////////////
+
+// ==========================================
+// RENT PAGE
+// ==========================================
+
 function renderRentGrid() {
+
   const rentGrid = document.getElementById('rentGrid');
+
   if (!rentGrid) return;
 
   let html = '';
+
   for (let i = 0; i < 9; i++) {
+
     html += `
-    <div class="col-md-4">
-      <div class="card property-card h-100">
-        <div class="img-wrapper">
-          <span class="badge-type bg-success">For Rent</span>
-          <img src="${rentImages[i]}" alt="Rental">
-          <button class="fav-btn" onclick="toggleFav(this)"><i class="fa-solid fa-heart"></i></button>
+      <div class="col-md-4">
+
+        <div class="card property-card h-100">
+
+          <div class="img-wrapper">
+
+            <span class="badge-type bg-success">
+              For Rent
+            </span>
+
+            <img src="${rentImages[i]}" alt="Rental">
+
+            <button 
+              class="fav-btn" 
+              onclick="toggleFav(this)"
+            >
+              <i class="fa-solid fa-heart"></i>
+            </button>
+
+          </div>
+
+          <div class="card-body p-4">
+
+            <div class="price-tag text-success mb-1">
+              PKR ${50 + i * 6},000 / mo
+            </div>
+
+            <h5 class="card-title text-dark fw-bold">
+              Executive Suite ${i + 1}
+            </h5>
+
+            <p class="text-muted small mb-2">
+              <i class="fa-solid fa-location-dot text-danger me-1"></i>
+              Gulberg, Lahore
+            </p>
+
+            <a 
+              href="property-detail.html" 
+              class="btn btn-outline-success w-100 rounded-pill mt-2 fw-semibold"
+            >
+              View Details
+            </a>
+
+          </div>
+
         </div>
-        <div class="card-body p-4">
-          <div class="price-tag text-success mb-1">PKR ${50 + i*6},000 / mo</div>
-          <h5 class="card-title text-dark fw-bold">Executive Suite ${i+1}</h5>
-          <p class="text-muted small mb-2"><i class="fa-solid fa-location-dot text-danger me-1"></i> Gulberg, Lahore</p>
-          <a href="property-detail.html" class="btn btn-outline-success w-100 rounded-pill mt-2 fw-semibold">View Details</a>
-        </div>
+
       </div>
-    </div>`;
+    `;
   }
+
   rentGrid.innerHTML = html;
 }
 
-///////////////////////////////////// Render Favorites Page //////////////////////////////////====
+
+// ==========================================
+// FAVOURITE PAGE
+// ==========================================
+
 function renderFavGrid() {
+
   const favGrid = document.getElementById('favGrid');
+
   if (!favGrid) return;
 
   let html = '';
+
   for (let i = 0; i < 9; i++) {
+
     html += `
-    <div class="col-md-4 fav-item-card">
-      <div class="card property-card h-100">
-        <div class="img-wrapper">
-          <span class="badge-type badge-fav">Saved</span>
-          <img src="${buyImages[i]}" alt="Saved Property">
-          <button class="fav-btn active" onclick="removeFavItem(this)"><i class="fa-solid fa-heart"></i></button>
-        </div>
-        <div class="card-body p-4">
-          <h5 class="card-title text-dark fw-bold">Saved Villa Unit ${i+1}</h5>
-          <div class="row g-2 mt-2">
-            <div class="col-8">
-              <a href="property-detail.html" class="btn btn-outline-primary w-100 rounded-pill btn-sm py-2">Details</a>
-            </div>
-            <div class="col-4">
-              <button class="btn btn-danger btn-sm w-100 rounded-pill py-2" onclick="removeFavItem(this)"><i class="fa-solid fa-trash-can"></i></button>
-            </div>
+      <div class="col-md-4 fav-item-card">
+
+        <div class="card property-card h-100">
+
+          <div class="img-wrapper">
+
+            <span class="badge-type badge-fav">
+              Saved
+            </span>
+
+            <img 
+              src="${buyImages[i]}" 
+              alt="Saved Property"
+            >
+
+            <button 
+              class="fav-btn active" 
+              onclick="removeFavItem(this)"
+            >
+              <i class="fa-solid fa-heart"></i>
+            </button>
+
           </div>
+
+          <div class="card-body p-4">
+
+            <h5 class="card-title text-dark fw-bold">
+              Saved Villa Unit ${i + 1}
+            </h5>
+
+            <div class="row g-2 mt-2">
+
+              <div class="col-8">
+
+                <a 
+                  href="property-detail.html" 
+                  class="btn btn-outline-primary w-100 rounded-pill btn-sm py-2"
+                >
+                  Details
+                </a>
+
+              </div>
+
+              <div class="col-4">
+
+                <button 
+                  class="btn btn-danger btn-sm w-100 rounded-pill py-2"
+                  onclick="removeFavItem(this)"
+                >
+                  <i class="fa-solid fa-trash-can"></i>
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
+
       </div>
-    </div>`;
+    `;
   }
+
   favGrid.innerHTML = html;
+
+  updateFavCounter();
 }
+
+
+// ==========================================
+// REMOVE FAVOURITE
+// ==========================================
 
 function removeFavItem(btn) {
+
   const card = btn.closest('.fav-item-card');
-  if (card) {
-    card.style.transition = "all 0.3s ease";
-    card.style.opacity = "0";
-    setTimeout(() => {
-      card.remove();
-      const counter = document.getElementById('favCounter');
-      const emptyState = document.getElementById('emptyFavState');
-      const items = document.querySelectorAll('.fav-item-card').length;
-      if (counter) counter.innerText = items;
-      if (emptyState) emptyState.style.display = items === 0 ? 'block' : 'none';
-    }, 300);
-  }
+
+  if (!card) return;
+
+  card.style.transition = "all 0.3s ease";
+  card.style.opacity = "0";
+  card.style.transform = "scale(0.95)";
+
+  setTimeout(() => {
+
+    card.remove();
+
+    updateFavCounter();
+
+  }, 300);
 }
+
+
+// Update Favourite Counter
+
+function updateFavCounter() {
+
+  const counter = document.getElementById('favCounter');
+  const emptyState = document.getElementById('emptyFavState');
+
+  const items = document.querySelectorAll('.fav-item-card').length;
+
+  if (counter) {
+    counter.innerText = items;
+  }
+
+  if (emptyState) {
+
+    emptyState.style.display =
+      items === 0 ? 'block' : 'none';
+
+  }
+
+}
+
+
+// ==========================================
+// FAVOURITE TOGGLE
+// ==========================================
 
 function toggleFav(btn) {
+
+  if (!btn) return;
+
   btn.classList.toggle('active');
+
 }
+
+
+// ==========================================
+// PROPERTY DETAIL IMAGE
+// ==========================================
 
 function changeImage(src, thumb) {
+
   const mainImg = document.getElementById('mainImage');
-  if (mainImg) mainImg.src = src;
-  document.querySelectorAll('.thumb-img').forEach(img => img.classList.remove('active'));
-  if (thumb) thumb.classList.add('active');
+
+  if (mainImg) {
+    mainImg.src = src;
+  }
+
+  document
+    .querySelectorAll('.thumb-img')
+    .forEach(img => {
+      img.classList.remove('active');
+    });
+
+  if (thumb) {
+    thumb.classList.add('active');
+  }
+
 }
 
 
+// ==========================================
+// NEWSLETTER
+// ==========================================
 
-// ==========================================
-// FLYING PLANE NEWSLETTER SYSTEM
-// ==========================================
-(function() {
-  const form = document.getElementById("creativeNewsletterForm");
-  const planeIcon = document.getElementById("planeIcon");
-  
-  if (form && planeIcon) {
-    form.addEventListener("submit", function(e) {
-      e.preventDefault(); // Default Page refresh rokhne ke liye
-      
-      const emailField = document.getElementById("newsletterEmailField");
-      const submitBtn = form.querySelector(".subscribe-action-btn");
-      const btnText = submitBtn.querySelector(".btn-text");
-      const spinner = submitBtn.querySelector(".spinner-border");
-      
-      if (emailField.value.trim() !== "") {
-        // Step 1: Trigger paper plane flying animation
-        planeIcon.classList.add("fly-away");
-        
-        // Step 2: Button loading state change
+(function () {
+
+  const form =
+    document.getElementById("creativeNewsletterForm");
+
+  const planeIcon =
+    document.getElementById("planeIcon");
+
+  if (!form || !planeIcon) return;
+
+
+  form.addEventListener("submit", function (e) {
+
+    e.preventDefault();
+
+    const emailField =
+      document.getElementById("newsletterEmailField");
+
+    const submitBtn =
+      form.querySelector(".subscribe-action-btn");
+
+    if (!emailField || !submitBtn) return;
+
+
+    const btnText =
+      submitBtn.querySelector(".btn-text");
+
+    const spinner =
+      submitBtn.querySelector(".spinner-border");
+
+
+    if (emailField.value.trim() !== "") {
+
+      // Plane animation
+      planeIcon.classList.add("fly-away");
+
+
+      // Loading state
+      if (btnText) {
         btnText.style.opacity = "0.5";
-        spinner.classList.remove("d-none");
-        submitBtn.disabled = true;
-        
-        // Step 3: Animation complete hone par success confirm display karna (1 sec delay)
-        setTimeout(() => {
-          spinner.classList.add("d-none");
-          btnText.style.opacity = "1";
-          btnText.innerHTML = '<i class="bi bi-shield-fill-check"></i> Subscribed!';
-          submitBtn.style.background.setProperty("background", "#2ec4b6", "important"); // Neon Success Green color
-          submitBtn.style.boxShadow = "0 8px 20px rgba(46, 196, 182, 0.35)";
-          
-          // Form resets after 3 seconds
-          setTimeout(() => {
-            planeIcon.classList.remove("fly-away");
-            btnText.innerHTML = "Subscribe";
-            submitBtn.style.background = "#0d6efd !important";
-            submitBtn.style.boxShadow = "";
-            submitBtn.disabled = false;
-            emailField.value = "";
-          }, 3000);
-          
-        }, 1100);
       }
-    });
-  }
-})();
 
+      if (spinner) {
+        spinner.classList.remove("d-none");
+      }
+
+      submitBtn.disabled = true;
+
+
+      setTimeout(() => {
+
+        if (spinner) {
+          spinner.classList.add("d-none");
+        }
+
+        if (btnText) {
+          btnText.style.opacity = "1";
+          btnText.innerHTML =
+            '<i class="bi bi-shield-fill-check"></i> Subscribed!';
+        }
+
+
+        submitBtn.style.setProperty(
+          "background",
+          "#2ec4b6",
+          "important"
+        );
+
+        submitBtn.style.boxShadow =
+          "0 8px 20px rgba(46, 196, 182, 0.35)";
+
+
+        setTimeout(() => {
+
+          planeIcon.classList.remove("fly-away");
+
+          if (btnText) {
+            btnText.innerHTML = "Subscribe";
+          }
+
+          submitBtn.style.setProperty(
+            "background",
+            "#0d6efd",
+            "important"
+          );
+
+          submitBtn.style.boxShadow = "";
+
+          submitBtn.disabled = false;
+
+          emailField.value = "";
+
+        }, 3000);
+
+      }, 1100);
+
+    }
+
+  });
+
+})();
 
 // ==========================================
 // FOOTER BACK TO TOP SMOOTH SCROLL SYSTEM

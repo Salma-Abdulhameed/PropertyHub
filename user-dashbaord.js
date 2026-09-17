@@ -46,9 +46,7 @@ window.addEventListener("scroll", function () {
 const userChart = document.getElementById("userActivityChart");
 
 if (userChart) {
-
     new Chart(userChart, {
-
         type: "bar",
 
         data: {
@@ -68,7 +66,6 @@ if (userChart) {
 
         options: {
             responsive: true,
-
             maintainAspectRatio: false,
 
             plugins: {
@@ -84,7 +81,6 @@ if (userChart) {
                     ticks: {
                         color: "#9fb0c8"
                     },
-
                     grid: {
                         display: false
                     }
@@ -92,11 +88,9 @@ if (userChart) {
 
                 y: {
                     beginAtZero: true,
-
                     ticks: {
                         color: "#9fb0c8"
                     },
-
                     grid: {
                         color: "#263b5c"
                     }
@@ -106,6 +100,20 @@ if (userChart) {
     });
 }
 
+
+// Firebase Logout
+
+import { signOut } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+import { auth } from "./firebase.js";
+
+const logoutBtn = document.getElementById("logoutBtn");
+
+if (logoutBtn) {
+    logoutBtn.addEventListener("click", async () => {
+        await signOut(auth);
+        window.location.href = "index.html";
+    });
+}
 
 // Back To Top
 
