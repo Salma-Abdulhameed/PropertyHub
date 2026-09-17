@@ -5,9 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sell-Property</title>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-<link rel="stylesheet" href="sell-property.css">
+<!-- Bootstrap link -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons CDN (Yeh hai icons ka actual link) -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Font Awesome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+     
+    <!-- Css link--> 
+     <link rel="stylesheet" href="sell-property.css">
     
 </head>
 <body>
@@ -322,6 +330,42 @@
 
     </div>
 </section>
+
+<!-- UNIQUE ULTRA-PREMIUM NEWSLETTER SECTION -->
+<section class="newsletter-section py-4">
+  <div class="container">
+    <div class="newsletter-wrapper rounded-4 p-4 d-flex flex-column flex-lg-row align-items-center justify-content-between gap-4 position-relative overflow-hidden">
+      
+      <!-- Ambient Decorative Glow behind the card -->
+      <div class="ambient-glow"></div>
+
+      <!-- Left Side: Icon & Info Text -->
+      <div class="d-flex align-items-center gap-3 text-center text-md-start position-relative z-1">
+        <div class="newsletter-icon-container">
+          <i class="bi bi-send-fill text-white fs-3" id="planeIcon"></i>
+        </div>
+        <div>
+          <h4 class="fw-bold text-white mb-1 fs-5 card-title-pop">Newsletter</h4>
+          <p class="text-white-50 mb-0 small">Subscribe to get updates on new properties and special offers.</p>
+        </div>
+      </div>
+
+      <!-- Right Side: Input and Button -->
+      <form class="newsletter-form-container d-flex gap-2 w-100 position-relative z-1" id="creativeNewsletterForm">
+        <div class="input-field-wrapper w-100 position-relative">
+          <span class="input-icon"><i class="bi bi-envelope"></i></span>
+          <input type="email" class="form-control newsletter-input" placeholder="Enter your email" required id="newsletterEmailField">
+        </div>
+        <button type="submit" class="btn subscribe-action-btn fw-bold px-4">
+          <span class="btn-text">Subscribe</span>
+          <span class="spinner-border spinner-border-sm d-none" role="status"></span>
+        </button>
+      </form>
+
+    </div>
+  </div>
+</section>
+
 
 <!-- ULTRA-PREMIUM RESPONSIVE FOOTER -->
 <footer class="main-footer bg-dark-blue text-white pt-5 pb-3 position-relative">

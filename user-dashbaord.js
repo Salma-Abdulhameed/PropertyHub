@@ -125,20 +125,19 @@ if (backToTopBtn) {
 }
 
 
-// Newsletter
-
-const newsletter = document.querySelector(".footer-mini-newsletter");
-
-if (newsletter) {
-
-    newsletter.addEventListener("submit", function (e) {
-
-        e.preventDefault();
-
-        alert("Thank you for subscribing!");
-
-        newsletter.reset();
-
+// ==========================================
+// FOOTER BACK TO TOP SMOOTH SCROLL SYSTEM
+// ==========================================
+(function() {
+  const backToTopBtn = document.getElementById("backToTopBtn");
+  
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener("click", function() {
+      // Safely triggers modern smooth page scrolling up to index zero layout position
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
     });
-
-}
+  }
+})();

@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User-Dashboard</title>
 
-    <!-- Bootstrap link -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+ <!-- Bootstrap link -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons CDN (Yeh hai icons ka actual link) -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
- <!-- Custom CSS -->  
-<link rel="stylesheet" href="user-dashboard.css">
+    <!-- Font Awesome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+     
+    <!-- Css link--> 
+     <link rel="stylesheet" href="user-dashboard.css">
 
 </head>
 <body>
@@ -143,69 +147,96 @@
 </header>
 <!-- Header End -->
 
-
- <!-- User Dashboard Start -->
+<!-- User Dashboard Start -->
 
 <section class="user-dashboard">
 
     <div class="container">
 
-        <!-- Dashboard Header -->
-        <div class="dashboard-header">
-            <span class="dashboard-label">PROPERTYHUB</span>
-            <h1>Welcome Back!</h1>
-            <p>Manage your properties and saved listings.</p>
+        <!-- Dashboard Topbar -->
+        <div class="user-topbar">
+
+            <div>
+                <span class="dashboard-label">PROPERTYHUB</span>
+                <h1>Welcome Back, Property User!</h1>
+                <p>Manage your saved properties, inquiries and appointments.</p>
+            </div>
+
+            <a href="./property-details.html" class="browse-btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Browse Properties
+            </a>
+
         </div>
 
 
-        <!-- Stats Cards -->
+        <!-- Statistics -->
         <div class="row g-4 mb-4">
 
             <div class="col-lg-3 col-md-6">
                 <div class="user-stat-card">
                     <div class="stat-icon">
-                        <i class="fa-solid fa-house"></i>
+                        <i class="fa-solid fa-eye"></i>
                     </div>
-                    <h3>12</h3>
-                    <p>Viewed Properties</p>
+
+                    <div>
+                        <span>Viewed Properties</span>
+                        <h3>12</h3>
+                        <small>Properties viewed</small>
+                    </div>
                 </div>
             </div>
+
 
             <div class="col-lg-3 col-md-6">
                 <div class="user-stat-card">
                     <div class="stat-icon">
                         <i class="fa-solid fa-heart"></i>
                     </div>
-                    <h3>8</h3>
-                    <p>Favorite Properties</p>
+
+                    <div>
+                        <span>Favorites</span>
+                        <h3>8</h3>
+                        <small>Saved properties</small>
+                    </div>
                 </div>
             </div>
+
 
             <div class="col-lg-3 col-md-6">
                 <div class="user-stat-card">
                     <div class="stat-icon">
                         <i class="fa-solid fa-envelope"></i>
                     </div>
-                    <h3>5</h3>
-                    <p>Inquiries</p>
+
+                    <div>
+                        <span>Inquiries</span>
+                        <h3>5</h3>
+                        <small>Property inquiries</small>
+                    </div>
                 </div>
             </div>
+
 
             <div class="col-lg-3 col-md-6">
                 <div class="user-stat-card">
                     <div class="stat-icon">
                         <i class="fa-solid fa-calendar-check"></i>
                     </div>
-                    <h3>3</h3>
-                    <p>Appointments</p>
+
+                    <div>
+                        <span>Appointments</span>
+                        <h3>3</h3>
+                        <small>Upcoming appointments</small>
+                    </div>
                 </div>
             </div>
 
         </div>
 
 
-        <!-- Main Dashboard Row -->
-        <div class="row g-4">
+        <!-- Activity + Profile -->
+        <div class="row g-4 mb-4">
 
             <!-- Activity Chart -->
             <div class="col-lg-8">
@@ -213,12 +244,15 @@
                 <div class="dashboard-box">
 
                     <div class="box-heading">
+
                         <div>
-                            <h4>My Activity</h4>
-                            <p>Property activity overview</p>
+                            <span class="box-label">ACTIVITY</span>
+                            <h4>My Property Activity</h4>
+                            <p>Your property activity overview</p>
                         </div>
 
-                        <i class="fa-solid fa-chart-column"></i>
+                        <i class="fa-solid fa-chart-line"></i>
+
                     </div>
 
                     <div class="chart-container">
@@ -235,26 +269,40 @@
 
                 <div class="dashboard-box profile-box">
 
-                    <div class="profile-icon">
-                        <i class="fa-solid fa-user"></i>
+                    <div class="profile-top">
+                        <div class="profile-icon">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+
+                        <div>
+                            <h4>My Profile</h4>
+                            <span class="profile-status">
+                                <i class="fa-solid fa-circle"></i> Active
+                            </span>
+                        </div>
                     </div>
 
-                    <h4>My Profile</h4>
-                    <p class="profile-email">user@propertyhub.com</p>
+                    <div class="profile-details">
 
-                    <div class="profile-info">
                         <div>
                             <span>Name</span>
                             <strong>Property User</strong>
                         </div>
 
                         <div>
+                            <span>Email</span>
+                            <strong>user@propertyhub.com</strong>
+                        </div>
+
+                        <div>
                             <span>Role</span>
                             <strong>Buyer</strong>
                         </div>
+
                     </div>
 
                     <button class="dashboard-btn">
+                        <i class="fa-solid fa-pen"></i>
                         Edit Profile
                     </button>
 
@@ -266,92 +314,353 @@
 
 
         <!-- Favorite Properties -->
-        <div class="dashboard-box favorites-box mt-4">
+        <div class="dashboard-box favorites-box">
 
-            <div class="box-heading">
+            <div class="box-heading favorite-heading">
+
                 <div>
+                    <span class="box-label">SAVED LISTINGS</span>
                     <h4>Favorite Properties</h4>
-                    <p>Your saved properties</p>
+                    <p>Properties you have saved for later.</p>
                 </div>
 
-                <i class="fa-solid fa-heart"></i>
+                <a href="properties.html" class="view-all-btn">
+                    View All
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
             </div>
 
 
-            <div class="row g-4">
+            <!-- Search & Filter -->
+            <div class="property-tools">
 
-                <div class="col-lg-4 col-md-6">
+                <div class="property-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input
+                        type="text"
+                        id="propertySearch"
+                        placeholder="Search saved properties..."
+                    >
+                </div>
+
+                <select id="propertyFilter">
+                    <option value="all">All Properties</option>
+                    <option value="sale">For Sale</option>
+                    <option value="rent">For Rent</option>
+                </select>
+
+            </div>
+
+
+            <!-- Property Cards -->
+            <div class="row g-4" id="favoriteProperties">
+
+
+                <!-- Property 1 -->
+                <div class="col-lg-4 col-md-6 property-item">
+
                     <div class="favorite-card">
 
                         <div class="property-image">
-                            <img src="./images/luxuary-villa.png" alt="Property">
-                            <span>For Sale</span>
+
+                            <img
+                                src="./images/luxuary-villa.png"
+                                alt="Modern Family Villa"
+                            >
+
+                            <span class="property-status sale">
+                                For Sale
+                            </span>
+
+                            <button class="favorite-btn">
+                                <i class="fa-solid fa-heart"></i>
+                            </button>
+
                         </div>
 
                         <div class="property-content">
+
                             <h5>Modern Family Villa</h5>
+
                             <p>
                                 <i class="fa-solid fa-location-dot"></i>
                                 DHA Lahore
                             </p>
 
+                            <div class="property-meta">
+                                <span>
+                                    <i class="fa-solid fa-bed"></i>
+                                    4 Beds
+                                </span>
+
+                                <span>
+                                    <i class="fa-solid fa-bath"></i>
+                                    3 Baths
+                                </span>
+                            </div>
+
                             <div class="property-bottom">
                                 <strong>PKR 2.5 Crore</strong>
-                                <i class="fa-solid fa-heart heart-active"></i>
+
+                                <button class="details-btn">
+                                    Details
+                                </button>
                             </div>
+
                         </div>
 
                     </div>
+
                 </div>
 
 
-                <div class="col-lg-4 col-md-6">
+                <!-- Property 2 -->
+                <div class="col-lg-4 col-md-6 property-item">
+
                     <div class="favorite-card">
 
                         <div class="property-image">
-                            <img src="./images/property-3.png" alt="Property">
-                            <span>For Rent</span>
+
+                            <img
+                                src="./images/property-3.png"
+                                alt="Luxury Apartment"
+                            >
+
+                            <span class="property-status rent">
+                                For Rent
+                            </span>
+
+                            <button class="favorite-btn">
+                                <i class="fa-solid fa-heart"></i>
+                            </button>
+
                         </div>
 
                         <div class="property-content">
+
                             <h5>Luxury Apartment</h5>
+
                             <p>
                                 <i class="fa-solid fa-location-dot"></i>
                                 Clifton Karachi
                             </p>
 
+                            <div class="property-meta">
+                                <span>
+                                    <i class="fa-solid fa-bed"></i>
+                                    2 Beds
+                                </span>
+
+                                <span>
+                                    <i class="fa-solid fa-bath"></i>
+                                    2 Baths
+                                </span>
+                            </div>
+
                             <div class="property-bottom">
                                 <strong>PKR 85,000</strong>
-                                <i class="fa-solid fa-heart heart-active"></i>
+
+                                <button class="details-btn">
+                                    Details
+                                </button>
                             </div>
+
                         </div>
 
                     </div>
+
                 </div>
 
 
-                <div class="col-lg-4 col-md-6">
+                <!-- Property 3 -->
+                <div class="col-lg-4 col-md-6 property-item">
+
                     <div class="favorite-card">
 
                         <div class="property-image">
-                            <img src="./images/property-2.png" alt="Property">
-                            <span>For Sale</span>
+
+                            <img
+                                src="./images/property-2.png"
+                                alt="Premium House"
+                            >
+
+                            <span class="property-status sale">
+                                For Sale
+                            </span>
+
+                            <button class="favorite-btn">
+                                <i class="fa-solid fa-heart"></i>
+                            </button>
+
                         </div>
 
                         <div class="property-content">
+
                             <h5>Premium House</h5>
+
                             <p>
                                 <i class="fa-solid fa-location-dot"></i>
                                 Bahria Town
                             </p>
 
+                            <div class="property-meta">
+                                <span>
+                                    <i class="fa-solid fa-bed"></i>
+                                    5 Beds
+                                </span>
+
+                                <span>
+                                    <i class="fa-solid fa-bath"></i>
+                                    4 Baths
+                                </span>
+                            </div>
+
                             <div class="property-bottom">
                                 <strong>PKR 3.2 Crore</strong>
-                                <i class="fa-solid fa-heart heart-active"></i>
+
+                                <button class="details-btn">
+                                    Details
+                                </button>
                             </div>
+
                         </div>
 
                     </div>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- Pagination -->
+            <div class="dashboard-pagination">
+
+                <span>Showing 1–3 of 8 properties</span>
+
+                <div>
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <button class="page-btn">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Recent Activity -->
+        <div class="row g-4 mt-1">
+
+            <!-- Inquiries -->
+            <div class="col-lg-6">
+
+                <div class="dashboard-box">
+
+                    <div class="box-heading">
+
+                        <div>
+                            <span class="box-label">RECENT</span>
+                            <h4>Recent Inquiries</h4>
+                        </div>
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                    </div>
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon">
+                            <i class="fa-solid fa-house"></i>
+                        </div>
+
+                        <div>
+                            <strong>Modern Family Villa</strong>
+                            <p>Inquiry sent to property agent</p>
+                        </div>
+
+                        <span>2h ago</span>
+
+                    </div>
+
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon">
+                            <i class="fa-solid fa-house"></i>
+                        </div>
+
+                        <div>
+                            <strong>Luxury Apartment</strong>
+                            <p>Agent response received</p>
+                        </div>
+
+                        <span>1d ago</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Appointments -->
+            <div class="col-lg-6">
+
+                <div class="dashboard-box">
+
+                    <div class="box-heading">
+
+                        <div>
+                            <span class="box-label">UPCOMING</span>
+                            <h4>Appointments</h4>
+                        </div>
+
+                        <i class="fa-solid fa-calendar-check"></i>
+
+                    </div>
+
+                    <div class="appointment-item">
+
+                        <div class="appointment-date">
+                            <strong>18</strong>
+                            <span>SEP</span>
+                        </div>
+
+                        <div>
+                            <strong>Property Visit</strong>
+                            <p>Modern Family Villa • 4:00 PM</p>
+                        </div>
+
+                        <span class="appointment-status">
+                            Confirmed
+                        </span>
+
+                    </div>
+
+
+                    <div class="appointment-item">
+
+                        <div class="appointment-date">
+                            <strong>22</strong>
+                            <span>SEP</span>
+                        </div>
+
+                        <div>
+                            <strong>Agent Meeting</strong>
+                            <p>Property consultation • 2:00 PM</p>
+                        </div>
+
+                        <span class="appointment-status">
+                            Pending
+                        </span>
+
+                    </div>
+
                 </div>
 
             </div>
@@ -365,344 +674,162 @@
 <!-- User Dashboard End -->
 
 
-<!-- Footer Start -->
+ <!-- UNIQUE ULTRA-PREMIUM NEWSLETTER SECTION -->
+<section class="newsletter-section py-4">
+  <div class="container">
+    <div class="newsletter-wrapper rounded-4 p-4 d-flex flex-column flex-lg-row align-items-center justify-content-between gap-4 position-relative overflow-hidden">
+      
+      <!-- Ambient Decorative Glow behind the card -->
+      <div class="ambient-glow"></div>
 
+      <!-- Left Side: Icon & Info Text -->
+      <div class="d-flex align-items-center gap-3 text-center text-md-start position-relative z-1">
+        <div class="newsletter-icon-container">
+          <i class="bi bi-send-fill text-white fs-3" id="planeIcon"></i>
+        </div>
+        <div>
+          <h4 class="fw-bold text-white mb-1 fs-5 card-title-pop">Newsletter</h4>
+          <p class="text-white-50 mb-0 small">Subscribe to get updates on new properties and special offers.</p>
+        </div>
+      </div>
+
+      <!-- Right Side: Input and Button -->
+      <form class="newsletter-form-container d-flex gap-2 w-100 position-relative z-1" id="creativeNewsletterForm">
+        <div class="input-field-wrapper w-100 position-relative">
+          <span class="input-icon"><i class="bi bi-envelope"></i></span>
+          <input type="email" class="form-control newsletter-input" placeholder="Enter your email" required id="newsletterEmailField">
+        </div>
+        <button type="submit" class="btn subscribe-action-btn fw-bold px-4">
+          <span class="btn-text">Subscribe</span>
+          <span class="spinner-border spinner-border-sm d-none" role="status"></span>
+        </button>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ULTRA-PREMIUM RESPONSIVE FOOTER -->
 <footer class="main-footer bg-dark-blue text-white pt-5 pb-3 position-relative">
-
-    <div class="container">
-
-        <!-- Footer Top -->
-        <div class="row g-4 pb-5 footer-top-border">
-
-            <!-- Brand -->
-            <div class="col-lg-3 col-md-6">
-
-                <div class="footer-brand d-flex align-items-center gap-2 mb-3">
-
-                    <i class="bi bi-house-door-fill text-primary fs-3"></i>
-
-                    <span class="fs-4 fw-bold text-white tracking-tight">
-                        Property<span class="text-primary">Hub</span>
-                    </span>
-
-                </div>
-
-                <p class="text-white-50 small pe-lg-3 lh-base mb-4">
-                    PropertyHub helps you find, buy, rent or sell properties
-                    with ease. We connect you to the best places to call home.
-                </p>
-
-                <!-- Social Icons -->
-                <div class="footer-socials d-flex gap-2">
-
-                    <a href="#" class="social-icon-btn">
-                        <i class="bi bi-facebook"></i>
-                    </a>
-
-                    <a href="#" class="social-icon-btn">
-                        <i class="bi bi-instagram"></i>
-                    </a>
-
-                    <a href="#" class="social-icon-btn">
-                        <i class="bi bi-twitter-x"></i>
-                    </a>
-
-                    <a href="#" class="social-icon-btn">
-                        <i class="bi bi-linkedin"></i>
-                    </a>
-
-                    <a href="#" class="social-icon-btn">
-                        <i class="bi bi-youtube"></i>
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- Quick Links -->
-            <div class="col-lg-2 col-md-6 col-6 ps-lg-4">
-
-                <h5 class="footer-heading fw-bold text-white mb-3">
-                    Quick Links
-                </h5>
-
-                <ul class="list-unstyled footer-links d-flex flex-column gap-2">
-
-                    <li>
-                        <a href="./index.html">
-                            <i class="bi bi-chevron-right small me-1"></i>
-                            Home
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <i class="bi bi-chevron-right small me-1"></i>
-                            Buy Properties
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <i class="bi bi-chevron-right small me-1"></i>
-                            Rent Properties
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <i class="bi bi-chevron-right small me-1"></i>
-                            Sell Property
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <i class="bi bi-chevron-right small me-1"></i>
-                            Agents
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="./favorites.html">
-                            <i class="bi bi-chevron-right small me-1"></i>
-                            Favorites
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="./contact.html">
-                            <i class="bi bi-chevron-right small me-1"></i>
-                            Contact Us
-                        </a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-            <!-- Popular Cities -->
-            <div class="col-lg-2 col-md-6 col-6">
-
-                <h5 class="footer-heading fw-bold text-white mb-3">
-                    Popular Cities
-                </h5>
-
-                <ul class="list-unstyled footer-links d-flex flex-column gap-2">
-
-                    <li>
-                        <a href="#">
-                            <i class="bi bi-geo-alt small me-1"></i>
-                            Karachi
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <i class="bi bi-geo-alt small me-1"></i>
-                            Lahore
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <i class="bi bi-geo-alt small me-1"></i>
-                            Islamabad
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <i class="bi bi-geo-alt small me-1"></i>
-                            Rawalpindi
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <i class="bi bi-geo-alt small me-1"></i>
-                            Faisalabad
-                        </a>
-                    </li>
-
-                    <li class="mt-2">
-
-                        <a href="#" class="text-primary fw-semibold view-all-cities-btn">
-                            View All Cities
-                            <i class="bi bi-arrow-right ms-1"></i>
-                        </a>
-
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-            <!-- Resources -->
-            <div class="col-lg-2 col-md-6 col-6">
-
-                <h5 class="footer-heading fw-bold text-white mb-3">
-                    Resources
-                </h5>
-
-                <ul class="list-unstyled footer-links d-flex flex-column gap-2">
-
-                    <li>
-                        <a href="#">
-                            <i class="bi bi-chevron-right small me-1"></i>
-                            About Us
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <i class="bi bi-chevron-right small me-1"></i>
-                            Blog
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <i class="bi bi-chevron-right small me-1"></i>
-                            Help Center
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <i class="bi bi-chevron-right small me-1"></i>
-                            Terms & Conditions
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <i class="bi bi-chevron-right small me-1"></i>
-                            Privacy Policy
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <i class="bi bi-chevron-right small me-1"></i>
-                            FAQs
-                        </a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-            <!-- Newsletter -->
-            <div class="col-lg-3 col-md-6 col-12">
-
-                <h5 class="footer-heading fw-bold text-white mb-3">
-                    Subscribe to Our Newsletter
-                </h5>
-
-                <p class="text-white-50 small mb-3">
-                    Get the latest property updates and offers directly
-                    in your inbox.
-                </p>
-
-                <form class="footer-mini-newsletter d-flex rounded-3 overflow-hidden border border-secondary mb-3">
-
-                    <input
-                        type="email"
-                        class="form-control bg-transparent border-0 text-white ps-3 small"
-                        placeholder="Enter your email"
-                        required
-                    >
-
-                    <button type="submit" class="btn btn-primary px-3 rounded-0">
-                        <i class="bi bi-send-fill"></i>
-                    </button>
-
-                </form>
-
-                <span class="text-white-50 x-small d-flex align-items-center gap-1">
-
-                    <i class="bi bi-lock-fill"></i>
-                    We respect your privacy.
-
-                </span>
-
-            </div>
-
+  <div class="container">
+    
+    <!-- Top Footer: Main Grid Links -->
+    <div class="row g-4 pb-5 footer-top-border">
+      
+      <!-- Column 1: Brand Info & Socials -->
+      <div class="col-lg-3 col-md-6">
+        <div class="footer-brand d-flex align-items-center gap-2 mb-3">
+          <i class="bi bi-house-door-fill text-primary fs-3"></i>
+          <span class="fs-4 fw-bold text-white tracking-tight">Property<span class="text-primary">Hub</span></span>
         </div>
-
-
-        <!-- Footer Bottom -->
-        <div class="row pt-4 align-items-center border-top border-secondary-subtle g-3">
-
-            <!-- Contact Info -->
-            <div class="col-lg-9 col-md-12">
-
-                <div class="d-flex flex-wrap gap-4 justify-content-center justify-content-lg-start text-white-50 small">
-
-                    <div class="d-flex align-items-center gap-2 footer-meta-item">
-
-                        <i class="bi bi-telephone-fill text-primary"></i>
-
-                        <span>+92 300 1234567</span>
-
-                    </div>
-
-
-                    <div class="d-flex align-items-center gap-2 footer-meta-item">
-
-                        <i class="bi bi-envelope-fill text-primary"></i>
-
-                        <span>info@propertyhub.com</span>
-
-                    </div>
-
-
-                    <div class="d-flex align-items-center gap-2 footer-meta-item">
-
-                        <i class="bi bi-geo-alt-fill text-primary"></i>
-
-                        <span>
-                            123 Main Boulevard, DHA Lahore, Pakistan
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- Copyright + Back To Top -->
-            <div class="col-lg-3 col-md-12 d-flex align-items-center justify-content-center justify-content-lg-end gap-3 text-center">
-
-                <p class="mb-0 text-white-50 small">
-                    &copy; 2026 PropertyHub. All Rights Reserved.
-                </p>
-
-                <button
-                    id="backToTopBtn"
-                    class="back-to-top-btn d-flex align-items-center justify-content-center"
-                    title="Go to top"
-                >
-
-                    <i class="bi bi-arrow-up"></i>
-
-                </button>
-
-            </div>
-
+        <p class="text-white-50 small pe-lg-3 lh-base mb-4">
+          PropertyHub helps you find, buy, rent or sell properties with ease. We connect you to the best places to call home.
+        </p>
+        <!-- Social Icons Row -->
+        <div class="footer-socials d-flex gap-2">
+          <a href="#" class="social-icon-btn"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="social-icon-btn"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="social-icon-btn"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="social-icon-btn"><i class="bi bi-linkedin"></i></a>
+          <a href="#" class="social-icon-btn"><i class="bi bi-youtube"></i></a>
         </div>
+      </div>
+
+      <!-- Column 2: Quick Links -->
+      <div class="col-lg-2 col-md-6 col-6 ps-lg-4">
+        <h5 class="footer-heading fw-bold text-white mb-3">Quick Links</h5>
+        <ul class="list-unstyled footer-links d-flex flex-column gap-2">
+          <li><a href="./index.html"><i class="bi bi-chevron-right small me-1"></i>Home</a></li>
+          <li><a href="#"><i class="bi bi-chevron-right small me-1"></i>Buy Properties</a></li>
+          <li><a href="#"><i class="bi bi-chevron-right small me-1"></i>Rent Properties</a></li>
+          <li><a href="#"><i class="bi bi-chevron-right small me-1"></i>Sell Property</a></li>
+          <li><a href="#"><i class="bi bi-chevron-right small me-1"></i>Agents</a></li>
+          <li><a href="./favorites.html"><i class="bi bi-chevron-right small me-1"></i>Favorites</a></li>
+          <li><a href="./contact.html"><i class="bi bi-chevron-right small me-1"></i>Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Popular Cities -->
+      <div class="col-lg-2 col-md-6 col-6">
+        <h5 class="footer-heading fw-bold text-white mb-3">Popular Cities</h5>
+        <ul class="list-unstyled footer-links d-flex flex-column gap-2">
+          <li><a href="#"><i class="bi bi-geo-alt small me-1"></i>Karachi</a></li>
+          <li><a href="#"><i class="bi bi-geo-alt small me-1"></i>Lahore</a></li>
+          <li><a href="#"><i class="bi bi-geo-alt small me-1"></i>Islamabad</a></li>
+          <li><a href="#"><i class="bi bi-geo-alt small me-1"></i>Rawalpindi</a></li>
+          <li><a href="#"><i class="bi bi-geo-alt small me-1"></i>Faisalabad</a></li>
+          <li class="mt-2"><a href="#" class="text-primary fw-semibold view-all-cities-btn">View All Cities <i class="bi bi-arrow-right ms-1"></i></a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Resources -->
+      <div class="col-lg-2 col-md-6 col-6">
+        <h5 class="footer-heading fw-bold text-white mb-3">Resources</h5>
+        <ul class="list-unstyled footer-links d-flex flex-column gap-2">
+          <li><a href="#"><i class="bi bi-chevron-right small me-1"></i>About Us</a></li>
+          <li><a href="#"><i class="bi bi-chevron-right small me-1"></i>Blog</a></li>
+          <li><a href="#"><i class="bi bi-chevron-right small me-1"></i>Help Center</a></li>
+          <li><a href="#"><i class="bi bi-chevron-right small me-1"></i>Terms & Conditions</a></li>
+          <li><a href="#"><i class="bi bi-chevron-right small me-1"></i>Privacy Policy</a></li>
+          <li><a href="#"><i class="bi bi-chevron-right small me-1"></i>FAQs</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 5: Mini Newsletter Box inside footer -->
+      <div class="col-lg-3 col-md-6 col-12">
+        <h5 class="footer-heading fw-bold text-white mb-3">Subscribe to Our Newsletter</h5>
+        <p class="text-white-50 small mb-3">Get the latest property updates and offers directly in your inbox.</p>
+        
+        <form class="footer-mini-newsletter d-flex rounded-3 overflow-hidden border border-secondary mb-3">
+          <input type="email" class="form-control bg-transparent border-0 text-white ps-3 small" placeholder="Enter your email" required>
+          <button type="submit" class="btn btn-primary px-3 rounded-0"><i class="bi bi-send-fill"></i></button>
+        </form>
+        <span class="text-white-50 x-small d-flex align-items-center gap-1"><i class="bi bi-lock-fill"></i> We respect your privacy.</span>
+      </div>
 
     </div>
 
+    <!-- Bottom Footer: Info Badges & Copyright -->
+    <div class="row pt-4 align-items-center border-top border-secondary-subtle g-3">
+      
+      <!-- Info Links Bar -->
+      <div class="col-lg-9 col-md-12">
+        <div class="d-flex flex-wrap gap-4 justify-content-center justify-content-lg-start text-white-50 small">
+          <!-- Number Counted Specially -->
+          <div class="d-flex align-items-center gap-2 footer-meta-item">
+            <i class="bi bi-telephone-fill text-primary"></i>
+            <span>+92 300 1234567</span>
+          </div>
+          <div class="d-flex align-items-center gap-2 footer-meta-item">
+            <i class="bi bi-envelope-fill text-primary"></i>
+            <span>info@propertyhub.com</span>
+          </div>
+          <!-- Karachi Random Address Specified -->
+          <div class="d-flex align-items-center gap-2 footer-meta-item">
+            <i class="bi bi-geo-alt-fill text-primary"></i>
+            <span>123 Main Boulevard,DHA Lahore, Pakistan</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright Text & Scroll to Top button -->
+      <div class="col-lg-3 col-md-12 d-flex align-items-center justify-content-center justify-content-lg-end gap-3 text-center">
+        <p class="mb-0 text-white-50 small">
+          &copy; 2026 PropertyHub. All Rights Reserved.
+        </p>
+        <!-- Back To Top Trigger -->
+        <button id="backToTopBtn" class="back-to-top-btn d-flex align-items-center justify-content-center" title="Go to top">
+          <i class="bi bi-arrow-up"></i>
+        </button>
+      </div>
+
+    </div>
+
+  </div>
 </footer>
 
-<!-- Footer End -->
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 

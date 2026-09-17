@@ -1103,3 +1103,23 @@ color:#2563eb;
     margin-bottom: 4px;
   }
 }
+
+/* Remove underline from Properties dropdown */
+.navbar .dropdown-toggle::after {
+    display: inline-block;
+    margin-left: .255em;
+    vertical-align: .255em;
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+    width: auto;
+    height: auto;
+    background: none;
+}
+
+.navbar .dropdown-toggle:focus::after,
+.navbar .dropdown-toggle:active::after {
+    width: auto !important;
+    background: none !important;
+}
